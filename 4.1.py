@@ -55,5 +55,5 @@ while True:
 
         select = input('\033[1;91m┌─╼\033[1;97m[\033[1;91m<\033[1;97m/\033[1;91m>\033[1;97m]--\033[1;91m>\033[1;97m Enter Để Thoát Tool \033[1;97m \n\033[1;91m└─╼\033[1;91m✈ \033[1;93m: ')
         if select == '':
-            os.system('cls' if os.name == 'nt' else 'clear')
+            time.sleep(0)
             continue
