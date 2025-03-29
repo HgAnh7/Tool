@@ -1,4 +1,5 @@
-
+import os
+import random
 
 # Danh sách các banner ASCII
 banners = [
