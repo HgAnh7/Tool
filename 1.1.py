@@ -42,7 +42,7 @@ formatted_device_id = format_device_id(random_id)
 
 banner = """
 ╔═════════════════╗
-║ \033[1;36mSpam SMS + Call\033[0m ║
+║ \033[1;96mSpam SMS + Call\033[0m ║
 ╚═════════════════╝
 """
 print(banner)
@@ -3382,11 +3382,11 @@ def send_otp_with_delay(func, phone, delay):
     func(phone)
 
 # Yêu cầu người dùng nhập số điện thoại
-phone = input("\033[97m[\033[93m*\033[97m] \033[1;96mNhập số điện thoại:\033[0m ")
+phone = input("\033[97m[\033[96m*\033[97m] \033[1;96mNhập số điện thoại:\033[0m ")
 if phone == "0326064605":
-    print("\033[\033[97m[\033[93m*\033[97m] \033[1;96mSố VIP không thể spam\033[0m")
+    print("\033[\033[97m[\033[96m*\033[97m] \033[1;96mSố VIP không thể spam\033[0m")
     exit()
-delay = float(input("\033[97m[\033[93m*\033[97m] \033[1;96mNhập độ trễ\033[0m (\033[1;92mgiây\033[0m) \033[1;94mgiữa các lần gửi tin nhắn\033[0m (\033[1;92mđặt 0 để chạy đồng thời\033[0m): "))
+delay = float(input("\033[97m[\033[96m*\033[97m] \033[1;96mNhập độ trễ\033[0m (\033[1;92mgiây\033[0m) \033[1;94mgiữa các lần gửi tin nhắn\033[0m (\033[1;92mđặt 0 để chạy đồng thời\033[0m): "))
 
 # Tạo danh sách các hàm OTP
 otp_functions = [
