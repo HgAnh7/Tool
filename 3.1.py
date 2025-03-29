@@ -565,20 +565,20 @@ while True:
             code = file.read()
         break
     except FileNotFoundError:
-        _file = input("\033[97m[\033[96m*\033[97m] \033[1;96mNHẬP LẠI TỆP \033[1;32m(không tìm thấy tệp)\033[97m:\033[0m ")
+        _file = input("\033[97m[\033[96m*\033[97m] \033[1;96mNhập Lại Tệp \033[1;32m(không tìm thấy tệp)\033[97m:\033[0m ")
         
 while True:
     try:
-        mode = int(input("\033[97m[\033[96m*\033[97m] \033[1;96mCHỌN CHẾ ĐỘ MÃ HÓA\033[97m:\033[0m "))
+        mode = int(input("\033[97m[\033[96m*\033[97m] \033[1;96mChọn Chế Độ Mã Hóa\033[97m:\033[0m "))
         if mode < 4:
             break
     except ValueError:
         pass
-moreobf = input("\033[97m[\033[96m*\033[97m] \033[1;96mBẠN CÓ MUỐN THÊM OBF KHÔNG? \033[1;92m(y/n)\033[97m:\033[0m ")
+moreobf = input("\033[97m[\033[96m*\033[97m] \033[1;96mBạn Có Muốn Thêm OBF Không? \033[1;92m(y/n)\033[97m:\033[0m ")
 
-antidebug = input("\033[97m[\033[96m*\033[97m] \033[1;96mBẠN CÓ MUỐN THÊM CHỐNG GỠ LỖI KHÔNG? \033[1;92m(y/n)\033[97m:\033[0m ")
+antidebug = input("\033[97m[\033[96m*\033[97m] \033[1;96mBạn Có Muốn Thêm Chống Gỡ Lỗi Không? \033[1;92m(y/n)\033[97m:\033[0m ")
 
-method = input("\033[97m[\033[96m*\033[97m] \033[1;96mBẠN CÓ MUỐN BIÊN DỊCH KHÔNG? \033[1;92m(y/n)\033[97m:\033[0m ")
+method = input("\033[97m[\033[96m*\033[97m] \033[1;96mBạn Có Muốn Biên Dịch Không? \033[1;92m(y/n)\033[97m:\033[0m ")
 
 check = 0
 code = _syntax(code)
