@@ -20,6 +20,8 @@ while True:
     if 'bad' in info['status']:
         print('⚠️\033[1;91mTên người dùng không hợp lệ!')
         time.sleep(3)
+        for _ in range(5):  
+            print('\033[A\033[K', end='')  # Di chuyển lên & xóa dòng
     elif 'ok' in info['status']:
         def get_info(key, default="⚠️ Không có dữ liệu!"):
             return str(info.get(key, default))
