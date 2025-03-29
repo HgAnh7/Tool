@@ -20,7 +20,6 @@ while True:
     if 'bad' in info['status']:
         print('⚠️\033[1;91mTên người dùng không hợp lệ!')
         time.sleep(3)
-        os.system('cls' if os.name == 'nt' else 'clear')
     elif 'ok' in info['status']:
         def get_info(key, default="⚠️ Không có dữ liệu!"):
             return str(info.get(key, default))
