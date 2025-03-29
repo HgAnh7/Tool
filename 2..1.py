@@ -155,7 +155,7 @@ def worker(url, duration, requests_per_milli):
 def main():
     print("""
 ╔════════════════════╗         
-║ \033[1;36mTấn công trang WEB\033[0m ║
+║ \033[1;36mTấn Công Trang WEB\033[0m ║
 ╚════════════════════╝
 """)
 
