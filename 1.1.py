@@ -43,7 +43,6 @@ formatted_device_id = format_device_id(random_id)
 print("\033[1;97m╔═════════════════╗\033[0m")
 print("\033[1;97m║ \033[1;96mSpam SMS + Call \033[1;97m║\033[0m")
 print("\033[1;97m╚═════════════════╝\033[0m")
-print('\033[1;97m════════════════════════════════════════════════════════\033[0m')
 
 def send_otp_via_sapo(sdt):
     cookies = {
