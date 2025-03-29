@@ -538,11 +538,10 @@ def obf(code):
     j = ast_to_code(tbd)
     return j
 
+print("\033[1;97m╔═══════════════════════╗")         
+print("║ \033[1;96mCông Cụ Mã Hóa PYTHON \033[97m║")
+print("╚═══════════════════════╝")
 print("""
-╔═══════════════════════╗         
-║ \033[1;36mCông Cụ Mã Hóa PYTHON\033[97m ║
-╚═══════════════════════╝
-
 ENHERLYS OBFUSCATOR
 AST MẠNH MẼ
 CHUỖI SỬ DỤNG BIỂU THỨC LAMBDA
