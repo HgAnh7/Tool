@@ -153,9 +153,9 @@ def worker(url, duration, requests_per_milli):
         update_title(int(pps), requests_per_milli)
 
 def main():
-    print("\033[1;97m╔════════════════════╗\033[0m")
-    print("\033[1;97m║ \033[1;96mTấn công trang WEB \033[1;97m║\033[0m")
-    print("\033[1;97m╚════════════════════╝\033[0m")
+    print("\033[1;97m╔════════════════════╗")
+    print("║ \033[1;96mTấn công trang WEB \033[1;97m║")
+    print("╚════════════════════╝\033[0m")
 
 
     url = input("\033[1;97m[\033[1;96m*\033[1;97m] \033[1;96mĐịa chỉ URL\033[0m: ").strip()
