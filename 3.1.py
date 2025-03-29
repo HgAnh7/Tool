@@ -538,7 +538,6 @@ def obf(code):
     j = ast_to_code(tbd)
     return j
 
-os.system('cls' if os.name == 'nt' else 'clear')
 print("""
 ╔═══════════════════════╗         
 ║ \033[1;36mCông Cụ Mã Hóa PYTHON\033[97m ║
