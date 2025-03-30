@@ -3,13 +3,6 @@
 import os
 import time
 
-try:
-    import ms4
-except ImportError:
-    os.system('pip install ms4==2.10.0')
-    os.system('cls' if os.name == 'nt' else 'clear')
-from ms4 import InfoTik
-
 while True:
     print('\033[1;97m╔═══════════════════════════════════╗')
     print('║ \033[1;96mCông Cụ Kiểm Tra Thông Tin TikTok \033[1;97m║')
@@ -61,4 +54,5 @@ while True:
         time.sleep(1.5)
         break
     else:
-        continue  # Di chuyển lên & xóa dòng
+        for _ in range(21):  
+            print('\033[A\033[K', end='')  # Di chuyển lên & xóa dòng
