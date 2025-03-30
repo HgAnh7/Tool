@@ -61,6 +61,5 @@ while True:
         time.sleep(1.5)
         break
     else:
-        for _ in range(20):  
+        for _ in range(40):  
             print('\033[A\033[K', end='')  # Di chuyển lên & xóa dòng
-            continue
