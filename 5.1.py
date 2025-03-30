@@ -62,3 +62,4 @@ while True:
     else:
         print("\033[1;91mĐang Thoát Tool.\033[0m")
         time.sleep(1,5)
+        break
