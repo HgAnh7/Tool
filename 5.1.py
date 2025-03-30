@@ -61,6 +61,4 @@ while True:
             print('\033[A\033[K', end='')  # Di chuyển lên & xóa dòng
     else:
         print("\033[1;91mĐang Thoát Tool.\033[0m")
-        time.sleep(3)
-        os.system('cls' if os.name == 'nt' else 'clear')
-        exit()
+        time.sleep(1,5)
