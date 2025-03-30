@@ -741,5 +741,5 @@ except Exception as e:
 
 """
 open("hganh7-" + _file, "w", encoding="utf8").write(str(code))
-print(" Tên File Đã Mã Hóa Là", "hganh7-" + _file)
+print("\033[97m[\033[96m*\033[97m] \033[1;91mTên File Đã Mã Hóa Là", "hganh7-" + _file)
 time.sleep(5)
