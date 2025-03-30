@@ -58,9 +58,8 @@ while True:
     select = input('\033[1;91m┌─╼\033[1;97m[\033[1;91m<\033[1;97m/\033[1;91m>\033[1;97m]--\033[1;91m>\033[1;97m Nhập Lựa Chọn \033[1;97m \n\033[1;91m└─╼\033[1;91m✈ \033[1;93m: ').strip()
     if select == '':
         print("\033[1;91mĐang Thoát Tool.\033[0m")
-        time.sleep(1,5)
+        time.sleep(1.5)
         break
     else:
         for _ in range(20):  
             print('\033[A\033[K', end='')  # Di chuyển lên & xóa dòng
-            continue
