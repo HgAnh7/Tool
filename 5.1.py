@@ -8,7 +8,7 @@ while True:
     print('║ \033[1;96mCông Cụ Kiểm Tra Thông Tin TikTok \033[1;97m║')
     print('╚═══════════════════════════════════╝\033[0m')
 
-    user = input('\033[1;97m[\033[1;96m*\033[1;97m] \033[1;96mNhập ID TikTok \033[1;97m(\033[1;33mBỏ "@"\033[1;97m): ').strip()
+    user = input('\033[1;97m[\033[1;96m*\033[1;97m] \033[1;97mNhập ID TikTok \033[1;97m(\033[1;33mBỏ "@"\033[1;97m): ').strip()
     info = InfoTik.TikTok_Info(user)
 
     if 'bad' in info['status']:
