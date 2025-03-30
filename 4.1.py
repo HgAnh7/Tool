@@ -59,7 +59,6 @@ while True:
     if select == '':
         for _ in range(23):  
             print('\033[A\033[K', end='')  # Di chuyển lên & xóa dòng
-            continue
     else:
         print("\033[1;91mĐang Thoát Tool.\033[0m")
         time.sleep(3)
