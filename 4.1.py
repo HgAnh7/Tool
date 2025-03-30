@@ -2,6 +2,7 @@
 
 import os
 import time
+
 try:
     import ms4
 except ImportError:
@@ -22,8 +23,9 @@ while True:
         time.sleep(3)
         for _ in range(5):  
             print('\033[A\033[K', end='')  # Di chuyển lên & xóa dòng
+        continue
     elif 'ok' in info['status']:
-        def get_info(key, default="⚠️ Không có dữ liệu!"):
+        def get_info(key, default="⚠️ \033[1;91mKhông có dữ liệu!"):
             return str(info.get(key, default))
 
         name = get_info('name')
@@ -37,8 +39,7 @@ while True:
         ID = get_info('id')
         bio = get_info('bio')
 
-    print(f'''
-\033[1;97m════════════════════════════════════════════════════════\033[0m
+    print(f'''\033[1;97m╔════════════════════════════════════\033[0m
 \033[1;97m[\033[1;96m*\033[1;97m] \033[1;96mTên người dùng: \033[1;97m@{user}             
 \033[1;97m[\033[1;96m*\033[1;97m] \033[1;96mTên hiển thị: \033[1;97m{name}           
 \033[1;97m[\033[1;96m*\033[1;97m] \033[1;96mNgười theo dõi: \033[1;97m{followers}         
@@ -49,18 +50,18 @@ while True:
 \033[1;97m[\033[1;96m*\033[1;97m] \033[1;96mQuốc gia: \033[1;97m{country}        
 \033[1;97m[\033[1;96m*\033[1;97m] \033[1;96mNgày tạo: \033[1;97m{Date}        
 \033[1;97m[\033[1;96m*\033[1;97m] \033[1;96mID: \033[1;97m{ID}           
-\033[1;97m[\033[1;96m*\033[1;97m] \033[1;96mTiểu sử: \033[1;97m{bio}
-\033[1;97m════════════════════════════════════════════════════════\033[0m         
-''')
-    print('\033[1;97m[\033[1;96m*\033[1;97m]Enter Để Tiếp Tục...')
-    print('\033[1;97m[\033[1;96m*\033[1;97m]Chọn "0" Để Thoát Tool')
+\033[1;97m[\033[1;96m*\033[1;97m] \033[1;96mTiểu sử: \033[1;97m{bio} 
+\033[1;97m╚════════════════════════════════════\033[0m''')
+    print('\033[1;97m[\033[1;96m*\033[1;97m] Enter Để Tiếp Tục...')
+    print('\033[1;97m[\033[1;96m*\033[1;97m] Nhập Kí Tự Bất Kì Để Thoát Tool')
+
     select = input('\033[1;91m┌─╼\033[1;97m[\033[1;91m<\033[1;97m/\033[1;91m>\033[1;97m]--\033[1;91m>\033[1;97m Nhập Lựa Chọn \033[1;97m \n\033[1;91m└─╼\033[1;91m✈ \033[1;93m: ').strip()
-    if select == '0':
-        exit()
-    elif select == '':
+    if select == '':
         for _ in range(23):  
             print('\033[A\033[K', end='')  # Di chuyển lên & xóa dòng
-        continue
+            continue
     else:
-        print("\033[1;91mLỗi: Lựa chọn không hợp lệ! Vui lòng nhập lại.\033[0m")
-        input("Nhấn Enter để tiếp tục...")  # Đợi người dùng nhấn Enter rồi tiếp tục
+        print("\033[1;91mĐang Thoát Tool.\033[0m")
+        time.sleep(3)
+        os.system('cls' if os.name == 'nt' else 'clear')
+        exit()
