@@ -28,13 +28,13 @@ class free_proxy:
 		        for _ in range(2):
 		        	print('\033[A\033[K', end='')
 		
-		print('     ⏳ \033[1;96mĐang Xử Lý...')
+		print('     ⏳ \033[1;93mĐang Xử Lý...')
 		time.sleep(3)
 		print('\033[A\033[K', end='')
 		for total in range(tanya_total):
 			total +=1
 			proxy = random.choice(proxies)
-			print('    proxy %s -> %s'%(total, proxy))
+			print('\033[;97m    proxy %s -> %s'%(total, proxy))
 		ask = input('\033[1;97m[\033[1;96m*\033[1;97m] Bạn Có Muốn Tạo Thêm Không? \033[1;92m(y/n)\033[97m:\033[0m ')
 		if ask in ['Y', 'y', '']:
 			for _ in range(tanya_total + 6):
