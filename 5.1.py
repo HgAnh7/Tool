@@ -52,14 +52,14 @@ while True:
 \033[1;97m[\033[1;96m*\033[1;97m] \033[1;96mID: \033[1;97m{ID}           
 \033[1;97m[\033[1;96m*\033[1;97m] \033[1;96mTiểu sử: \033[1;97m{bio} 
 \033[1;97m╚════════════════════════════════════\033[0m''')
-    print('\033[1;97m[\033[1;96m*\033[1;97m] Enter Để Tiếp Tục...')
-    print('\033[1;97m[\033[1;96m*\033[1;97m] Nhập Kí Tự Bất Kì Để Thoát Tool')
+    print('\033[1;97m[\033[1;96m*\033[1;97m] Enter Để Thoát Tool')
+    print('\033[1;97m[\033[1;96m*\033[1;97m] Nhập Kí Tự Bất Kì Để Tiếp Tục...')
 
     select = input('\033[1;91m┌─╼\033[1;97m[\033[1;91m<\033[1;97m/\033[1;91m>\033[1;97m]--\033[1;91m>\033[1;97m Nhập Lựa Chọn \033[1;97m \n\033[1;91m└─╼\033[1;91m✈ \033[1;93m: ').strip()
     if select == '':
-        for _ in range(23):  
-            print('\033[A\033[K', end='')  # Di chuyển lên & xóa dòng
-    else:
         print("\033[1;91mĐang Thoát Tool.\033[0m")
         time.sleep(1,5)
         break
+    else:
+        for _ in range(20):  
+        print('\033[A\033[K', end='')  # Di chuyển lên & xóa dòng
