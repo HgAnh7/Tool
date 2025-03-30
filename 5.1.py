@@ -62,4 +62,4 @@ while True:
         break
     else:
         for _ in range(20):  
-        print('\033[A\033[K', end='')  # Di chuyển lên & xóa dòng
+            print('\033[A\033[K', end='')  # Di chuyển lên & xóa dòng
