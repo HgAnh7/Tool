@@ -574,11 +574,11 @@ while True:
             break
     except ValueError:
         pass
-moreobf = input("\033[97m[\033[96m*\033[97m] \033[1;96mBạn Có Muốn Thêm OBF Không? \033[1;92m(y/n)\033[97m:\033[0m ")
+moreobf = input("\033[97m[\033[96m*\033[97m] \033[1;96mBạn Có Muốn Thêm OBF Không? \033[1;92m(y/n)\033[97m: ")
 
-antidebug = input("\033[97m[\033[96m*\033[97m] \033[1;96mBạn Có Muốn Thêm Chống Gỡ Lỗi Không? \033[1;92m(y/n)\033[97m:\033[0m ")
+antidebug = input("\033[97m[\033[96m*\033[97m] \033[1;96mBạn Có Muốn Thêm Chống Gỡ Lỗi Không? \033[1;92m(y/n)\033[97m: ")
 
-method = input("\033[97m[\033[96m*\033[97m] \033[1;96mBạn Có Muốn Biên Dịch Không? \033[1;92m(y/n)\033[97m:\033[0m ")
+method = input("\033[97m[\033[96m*\033[97m] \033[1;96mBạn Có Muốn Biên Dịch Không? \033[1;92m(y/n)\033[97m: ")
 
 check = 0
 code = _syntax(code)
