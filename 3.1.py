@@ -741,12 +741,5 @@ except Exception as e:
 
 """
 open("hganh7-" + _file, "w", encoding="utf8").write(str(code))
-print(" Save in", "hganh7-" + _file)
-print("\033[1;91mNhập Bất Kì Hoặc Enter Để Thoát Tool\033[0m")
-out = input()
-if out == '':
-    os.system('cls' if os.name == 'nt' else 'clear')
-    exit()
-else:
-    os.system('cls' if os.name == 'nt' else 'clear')
-    exit()
+print(" Tên File Đã Mã Hóa Là", "hganh7-" + _file)
+time.sleep(5)
