@@ -41,7 +41,7 @@ class free_proxy:
 				print('\033[A\033[K', end='')  # Di chuyển lên & xóa dòng
 			free_proxy()
 		elif ask in ['n', 'N']:
-			exit()
+			time.sleep(1)
 try:
 	free_proxy()
 except Exception as e:
