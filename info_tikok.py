@@ -2,6 +2,7 @@
 
 import os
 import time
+from ms4 import InfoTik
 
 while True:
     print('\033[1;97m╔═══════════════════════════════════╗')
