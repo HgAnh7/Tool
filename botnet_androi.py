@@ -9,7 +9,7 @@ colors = [
 ]
 
 BOT_TOKEN = "7463062603:AAEAGU-e9d-4-UrDeLWMHeKYn5hKdhk5SLc"
-CHAT_ID = "6540534126"
+CHAT_ID = "-1002408191237"
 
 bot = telebot.TeleBot(BOT_TOKEN)
 
