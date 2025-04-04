@@ -11,13 +11,23 @@ except ImportError:
     os.system('cls' if os.name == 'nt' else 'clear')
 from ms4 import InfoTik
 
+# Định nghĩa màu
+black = "\033[1;90m"
+red = "\033[1;91m"
+green = "\033[1;92m"
+yellow = "\033[1;93m"
+blue = "\033[1;94m"
+magenta = "\033[1;95m"
+cyan = "\033[1;96m"
+white = "\033[1;97m"
+
 # Định nghĩa ký tự thông báo
-a = "\033[1;97m[\033[1;96m*\033[1;97m] " # [*]
+a = f"{white}[{cyan}*{white}] " # [*]
 
 # Định nghĩa danh sách các script
 script_urls = {
     '0.0': 'https://raw.githubusercontent.com/HgAnh7/Tool/refs/heads/main/banner.py',
-    '0.2': 'https://github.com/HgAnh7/Tool/blob/main/botnet_androi.py',
+    '0.2': 'https://raw.githubusercontent.com/HgAnh7/Tool/refs/heads/main/botnet_androi.py',
     '0.1': 'https://raw.githubusercontent.com/HgAnh7/Tool/refs/heads/main/0.1.py',
     '1.1': 'https://raw.githubusercontent.com/HgAnh7/Tool/refs/heads/main/spam_sms.py',
     '2.1': 'https://raw.githubusercontent.com/HgAnh7/Tool/refs/heads/main/QR_code.py',
@@ -33,30 +43,34 @@ def execute_code(url):
 while True:
     execute_code(script_urls['0.0'])  # Hiển thị banner
     options = {
-        "0.1": "Hàng Cấm [Only PC]",
-        "0.2": "Hàng Cấm [Only Androi]",
-        "1.1": "Tool Spam Sms \033[1;92m\033[1;92m\033[1;92m\033[1;92m\033[1;92m\033[1;92m[Online]",
-        "2.1": "Công Tạo QR Code \033[1;92m\033[1;92m\033[1;92m\033[1;92m\033[1;92m[Online]",
-        "3.1": "Tấn Công Trang WEB \033[1;92m\033[1;92m\033[1;92m\033[1;92m[Online]",
-        "4.1": "Công Cụ Mã Hóa PYTHON \033[1;92m\033[1;92m\033[1;92m[Online]",
-        "5.1": "Công Tạo Proxy Ngẫu Nhiên \033[1;92m\033[1;92m[Online]",
-        "6.1": "Công Cụ Kiểm Tra Thông Tin TikTok \033[1;92m[Online]"
+        "0.1": f"{red}Hàng Cấm {magenta}[Only PC]",
+        "0.2": f"{red}Hàng Cấm {magenta}[Only Androi]",
+        "1.1": f"Tool Spam Sms {green}[Online]",
+        "2.1": f"Công Tạo QR Code {green}[Online]",
+        "3.1": f"Tấn Công Trang WEB {green}[Online]",
+        "4.1": f"Công Cụ Mã Hóa PYTHON {green}[Online]",
+        "5.1": f"Công Tạo Proxy Ngẫu Nhiên {green}[Online]",
+        "6.1": f"Công Cụ Kiểm Tra Thông Tin TikTok {green}[Online]"
     }
 
     for key, value in options.items():
-        print(f"{a}\033[1;93m{key}\033[1;97m: \033[1;94m{value}")
+        print(f"{a}{yellow}{key}{white}: {blue}{value}")
 
-    print(f"{a}\033[1;93mEnter\033[1;97m: \033[1;96mThoát Tool")
-    print("\033[1;97m════════════════════════════════════════════════════════")
+    print(f"{a}{yellow}Enter{white}: {cyan}Thoát Tool")
+    print(f"{white}════════════════════════════════════════════════════════")
 
-    select = input("\033[1;91m┌─╼\033[1;97m[\033[1;91m<\033[1;97m/\033[1;91m>\033[1;97m]--\033[1;91m>\033[1;97m Nhập Lựa Chọn \n\033[1;91m└─╼\033[1;91m✈ \033[1;93m: ")
-    print("\033[1;97m════════════════════════════════════════════════════════\033[0m")
+    select = input(f"{red}┌─╼{white}[{red}<{white}/{red}>{white}]--{red}>{white} Nhập Lựa Chọn \n{red}└─╼✈ {white}: {yellow} ")
+    print(f"{white}════════════════════════════════════════════════════════\033[0m")
 
     if select in script_urls:
         execute_code(script_urls['0.0'])
         execute_code(script_urls[select])
     elif select == '':
+        for i in range(6):  # Lặp 6 lần
+            print(f"{magenta}Đang thoát tool{'.' * i}", end="\r")
+            time.sleep(0.5)
+        os.system('cls' if os.name == 'nt' else 'clear')
         exit()
     else:
-        print("\033[1;91mLỗi: Lựa chọn không hợp lệ! Vui lòng nhập lại.\033[0m")
+        print(f"{red}Lỗi: Lựa chọn không hợp lệ! Vui lòng nhập lại.\033[0m")
         time.sleep(2)
