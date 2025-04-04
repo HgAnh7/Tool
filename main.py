@@ -34,7 +34,7 @@ while True:
     execute_code(script_urls['0.0'])  # Hiển thị banner
     options = {
         "0.1": "Hàng Cấm [Only PC]",
-        "0.2": "Hàng Cấm [Only Androi]"
+        "0.2": "Hàng Cấm [Only Androi]",
         "1.1": "Tool Spam Sms \033[1;92m\033[1;92m\033[1;92m\033[1;92m\033[1;92m\033[1;92m[Online]",
         "2.1": "Công Tạo QR Code \033[1;92m\033[1;92m\033[1;92m\033[1;92m\033[1;92m[Online]",
         "3.1": "Tấn Công Trang WEB \033[1;92m\033[1;92m\033[1;92m\033[1;92m[Online]",
