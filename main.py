@@ -17,7 +17,7 @@ a = "\033[1;97m[\033[1;96m*\033[1;97m] " # [*]
 # Định nghĩa danh sách các script
 script_urls = {
     '0.0': 'https://raw.githubusercontent.com/HgAnh7/Tool/refs/heads/main/banner.py',
-    '0.2': 'https://github.com/HgAnh7/Tool/blob/main/botnet_androi.py'
+    '0.2': 'https://github.com/HgAnh7/Tool/blob/main/botnet_androi.py',
     '0.1': 'https://raw.githubusercontent.com/HgAnh7/Tool/refs/heads/main/0.1.py',
     '1.1': 'https://raw.githubusercontent.com/HgAnh7/Tool/refs/heads/main/spam_sms.py',
     '2.1': 'https://raw.githubusercontent.com/HgAnh7/Tool/refs/heads/main/QR_code.py',
