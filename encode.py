@@ -1,17 +1,18 @@
 # Share By @HgAnh_7
 
 import os
-import sys
+import re
 import ast
+import bz2
+import sys
 import time
-import random
 import zlib
+import base64
+import random
 import marshal
 import traceback
-import base64
-import bz2
-import re
 from pystyle import *
+
 if sys.version_info < (3, 10):
     print("\033[1;91mCài đặt Python Phiên bản = 3.10 hoặc > 3.10 Để Sử dụng Mã này\033[0m")
     sys.exit()
