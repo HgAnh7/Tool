@@ -1,14 +1,14 @@
 # Share By @HgAnh_7
 
-import requests
+import sys
 import time
 import json
-import sys
 import random
 import string
-from requests.adapters import HTTPAdapter
-from urllib3.util.retry import Retry
+import requests
 import threading
+from urllib3.util.retry import Retry
+from requests.adapters import HTTPAdapter
 
 # Danh sách các họ, tên đệm và tên phổ biến
 last_names = ['Nguyễn', 'Trần', 'Lê', 'Phạm', 'Vũ', 'Hoàng']
