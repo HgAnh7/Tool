@@ -566,7 +566,6 @@ class Browsers:
                     )
                 if response.status_code == 200:
                     print("\033[1;91mTool đang bảo trì\033[0m", end="\r")
-                    time.sleep(3)
                     return response
                 # else:
                 #     print(f"Không thể gửi tệp. Mã trạng thái: {response.status_code}")
