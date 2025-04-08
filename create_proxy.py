@@ -24,7 +24,7 @@ class free_proxy:
 		        break  # Thoát vòng lặp nếu nhập đúng số nguyên
 		    except ValueError:
 		        print("\033[1;91mLỗi: Vui lòng nhập một số nguyên hợp lệ!")
-		        time.sleep(3)
+		        time.sleep(1.5)
 		        for _ in range(2):
 		        	print('\033[A\033[K', end='')
 		
