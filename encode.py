@@ -8,7 +8,7 @@ import marshal
 import base64
 import bz2
 import re
-from pystyle import *
+# from pystyle import *
 if sys.version_info < (3, 10):
     print("\033[1;91mCài đặt Python phiên bản 3.10 hoặc mới hơn để sử dụng công cụ này ")
     sys.exit()
@@ -610,10 +610,10 @@ def obf(code):
     return j
 
 
-dark = Col.dark_gray
-light = Col.light_gray
-purple = Colors.StaticMIX((Col.green, Col.yellow))
-bpurple = Colors.StaticMIX((Col.pink, Col.blue, Col.blue))
+# dark = Col.dark_gray
+# light = Col.light_gray
+# purple = Colors.StaticMIX((Col.green, Col.yellow))
+# bpurple = Colors.StaticMIX((Col.pink, Col.blue, Col.blue))
 
 print("""\033[1;97m╔═══════════════════════╗        
 ║ \033[1;96mCông Cụ Mã Hóa PYTHON \033[97m║
@@ -639,18 +639,18 @@ b = '\033[0m'
 
 print(text)
 
-# print(Colorate.Diagonal(Colors.DynamicMIX((purple, light)), banner))
-def stage(text: str, symbol: str = 'HgAnh_7', col1 = light, col2 = None) -> str:
-    if col2 is None:
-        col2 = light if symbol == 'HgAnh_7' else purple
-    return f""" {Col.Symbol(symbol, col1, dark)} {Colorate.Diagonal(Colors.DynamicMIX((purple, light)), text)}{light}"""
+# # print(Colorate.Diagonal(Colors.DynamicMIX((purple, light)), banner))
+# def stage(text: str, symbol: str = 'HgAnh_7', col1 = light, col2 = None) -> str:
+#     if col2 is None:
+#         col2 = light if symbol == 'HgAnh_7' else purple
+#     return f""" {Col.Symbol(symbol, col1, dark)} {Colorate.Diagonal(Colors.DynamicMIX((purple, light)), text)}{light}"""
 
-v = input
-_v = print
-def input(x):
-    return v(stage(x))
-def print(x,*k):
-    return _v(stage(x),*k)
+# v = input
+# _v = print
+# def input(x):
+#     return v(stage(x))
+# def print(x,*k):
+#     return _v(stage(x),*k)
 
 
 
@@ -857,4 +857,4 @@ except Exception as e:
 
 """
 open("obf_" + _file, "w", encoding="utf8").write(str(code))
-print(" Đã lưu tại ", "obf_" + _file)
+print(" \033[1;95mĐã lưu tại ", "obf_" + _file + "\033[m")
