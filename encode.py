@@ -1,6 +1,4 @@
-
-
-
+# Share by HgAnh_7
 
 import sys
 import ast
@@ -12,7 +10,7 @@ import bz2
 import re
 from pystyle import *
 if sys.version_info < (3, 10):
-    print("Install Python Version = 3.10 or > 3.10 To Use This Code ")
+    print("\033[1;91mCài đặt Python phiên bản 3.10 hoặc mới hơn để sử dụng công cụ này ")
     sys.exit()
 
 def _rd():
@@ -92,7 +90,7 @@ def obfstr(string):
 def _byte(v):
     byte_array = bytearray()
     byte_array.extend(v.to_bytes((v.bit_length() + 7) // 8, 'big'))
-    return b"enjuly19/" + byte_array
+    return b"HoangAnh/" + byte_array
 
 def obfint(v):
     n = rd()
@@ -170,25 +168,25 @@ globals()['{___import__}'] =  {varsobf('__import__')}
 
 globals()['tryᅠ'] =  {varsobf('print')}
 globals()['exceptᅠ'] =  {varsobf('input')}
-def {_join}(july,*k):
+def {_join}(Anh,*k):
     if k:
-        enjuly19 = '+'
+        HoangAnh = '+'
         op = "+"
     else:
-        enjuly19 = ''
+        HoangAnh = ''
         op = ''
     globals()['{__exx}'] = {obfint(True)}
     globals()['{_join}'] = {_join}
     globals()['{_str}'] = {_str}
-    globals()['july'] = july
-    for globals()['enjuly19_'] in globals()['july']:
-        if not {__exx}:globals()['enjuly19_'] += (lambda : '')()
-        enjuly19 += {_str}(enjuly19_);f = {obfint(True)}
-    return enjuly19
+    globals()['Anh'] = Anh
+    for globals()['HoangAnh_'] in globals()['Anh']:
+        if not {__exx}:globals()['HoangAnh_'] += (lambda : '')()
+        HoangAnh += {_str}(HoangAnh_);f = {obfint(True)}
+    return HoangAnh
 def H2SbF7(x):
     return {_int}(x-0x7777)
 def c2h6(e):
-    br = bytearray(e[len(b"enjuly19/"):])
+    br = bytearray(e[len(b"HoangAnh/"):])
     r = 0
     for b in br:
         r = r * 256 + b
@@ -227,7 +225,7 @@ if {obfint(True)}:
         for _hex in j:
             {_argshexrun} += ({_hexrun}(_hex))
         return {_argshexrun}
-else:"enjuly19"
+else:"HoangAnh"
 """
 
 
@@ -235,9 +233,9 @@ ANTI_PYCDC = f"""
 try:pass
 except:pass
 else:pass
-finally:int(2008-2006)
+finally:int(2007)
 try:
-    def ___(__, _: str, ngocuyen = True, deptrai = True) -> None:pass
+    def ___(__, _: str, HoangAnh = True, deptrai = True) -> None:pass
 except:pass
 finally:pass
 """
@@ -438,7 +436,7 @@ def _syntax(x):
         if node.name:
             for statement in node.body:
                 ten = ast.Try(
-                    body=[ast.parse(f"{_eval}('0/0')"),ast.parse(f"""if "ngocuyen" == "deptrai":{rd()},{rd()},{rd()},{rd()}\nelse:pass""")],
+                    body=[ast.parse(f"{_eval}('0/0')"),ast.parse(f"""if "HoangAnh" == "deptrai":{rd()},{rd()},{rd()},{rd()}\nelse:pass""")],
                     handlers=[
                         ast.ExceptHandler(
                             type=ast.Name(id='ZeroDivisionError', ctx=ast.Load()),
@@ -617,54 +615,34 @@ light = Col.light_gray
 purple = Colors.StaticMIX((Col.green, Col.yellow))
 bpurple = Colors.StaticMIX((Col.pink, Col.blue, Col.blue))
 
+print("""\033[1;97m╔═══════════════════════╗        
+║ \033[1;96mCông Cụ Mã Hóa PYTHON \033[97m║
+╚═══════════════════════╝""")
+
 text = f"""
- ENJULY19 OBFUSCATOR
- POWERFULL AST
- STRING USE LAMBDA EXPRESSION
- INT AND BOOL USE TENARY EXPRESSION
- TRY CATCH , MATCH CASE [ADD TRASH VAR AND FUNCTION NOT DEFIND]
+ HOANGANH OBFUSCATOR
+ XỬ LÝ AST MẠNH MẼ
+ CHUỖI DÙNG BIỂU THỨC LAMBDA
+ SỐ NGUYÊN VÀ BOOL DÙNG BIỂU THỨC ĐIỀU KIỆN
+ TRY CATCH, MATCH CASE [CHÈN BIẾN/HÀM RÁC KHÔNG ĐƯỢC ĐỊNH NGHĨA]
 
 
- MODE 1 : LOW OBF (FOR ALL FILE) (EZ TO DEOBF)
- MODE 2 : MEDIUM (BEST CHOICE) (FULL STRING,INT,BOOL OBF)
- MODE 3 : HIGH (NOT RECOMMEND) (IT IS MEDIUM MODE BUT X2 SPAM)
+ MODE 1 : CHẾ ĐỘ THẤP (DÙNG CHO MỌI FILE) (DỄ BỊ GIẢI MÃ)
+ MODE 2 : TRUNG BÌNH (NÊN DÙNG) (MÃ HÓA TOÀN BỘ CHUỖI, SỐ NGUYÊN, BOOL)
+ MODE 3 : CAO (KHÔNG KHUYẾN NGHỊ) (CHẾ ĐỘ TRUNG BÌNH NHƯNG THÊM NHIỀU RÁC HƠN)
 
- ANTI HOOKING : BLOCK HOOKING
- COMPILER : WITH MARSHAL(ANTI PYC DECOMPILER),ZLIB,BZ2,BASE64
+ ANTI HOOKING : CHẶN HOOK
+ COMPILER : DÙNG MARSHAL (CHỐNG GIẢI PYTHON BYTECODE), ZLIB, BZ2, BASE64
 """
+a = '\033[97m[\033[96m*\033[97m] \033[1;96m'
+b = '\033[0m'
 
-banner = f"""
+print(text)
 
-⠐⠀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⡀⠀⠀⠀⠀⠀⢀⣀⢀⠀⠀⣀⣀⣀⣀⠀⣀⣀⣀⣀⢀⡀⠀⠀⠀⠀⢀⡈⠢
-⠀⠈⠭⣿⠏⠈⢻⣿⡿⠛⠉⠁⠀⠁⠀⠀⠀⠀⠀⢈⣈⣤⣤⣤⣀⡀⠀⠀⠀⠊⡊⠓⡦⡀⠀⠀⠀⠀⠀⠀⡇⠈
-⠀⠀⠒⣧⣦⣠⠞⠁⠀⠀⠀⠀⠀⠀⢀⣀⣤⣶⣿⠯⠽⠧⠼⠷⢶⠿⢓⣀⣀⣆⡀⣠⣈⠻⣦⡀⣀⣠⡀⠀⡇⠀
-⠀⠰⣟⣷⡟⠁⠀⠀⠀⠀⠀⢀⡤⠖⢫⣍⢀⣾⣯⠀⣞⡆⠀⣏⢻⣠⣄⡀⠉⠙⣻⣿⡻⣷⡈⢻⣿⣿⣷⣾⡇⠀
-⠀⢠⣶⡟⠁⠀⠀⠀⣀⣴⠚⠉⠀⣠⣿⠞⠋⠻⣿⡀⠀⠀⠀⠈⠙⢻⣟⠳⣆⠀⠙⢯⡛⣿⢻⡇⡟⢩⢟⡟⡇⠀
-⠀⢸⣿⠀⠀⠀⡠⣾⣿⢉⡀⢀⡆⡿⢃⣀⠀⠀⠘⣷⣀⢠⡄⠀⠀⠀⣙⠓⣿⣶⡀⠀⠛⠻⣾⣴⣱⣣⢖⣱⡇⠀
-⠀⠸⣿⣧⢤⡎⣰⣣⣶⡏⡧⣄⣵⡿⠭⠻⠃⠀⠀⢣⣹⠸⣿⣤⡐⠛⠛⠷⡆⠈⠑⠢⠤⣀⠹⣿⡿⠿⣿⡿⡇⠀
-⠀⢈⡿⣻⠉⡇⡿⠟⢉⡇⠱⣿⡁⡇⠀⠀⢀⣀⠀⠸⣧⠰⡇⢈⣙⡧⣄⡰⣤⣀⣠⣶⠒⠉⠀⠈⣧⣀⠀⣿⡇⠀
-⠀⠀⣀⠈⠶⣿⠁⠀⠘⠣⢻⠇⣳⣷⣶⣶⣿⡟⠀⠀⠙⢷⣿⠘⣽⣿⣿⣿⣿⣄⠀⢻⠀⠀⠀⠀⡸⡿⠤⣷⡇⠀
-⠀⠐⠋⠀⢀⡿⠀⠘⠀⢰⢸⣿⡿⢿⣿⠏⢉⣇⠀⠀⠀⠀⠙⠃⣾⣿⣁⣈⡻⣿⣯⣿⡄⠀⠀⣶⣇⢹⣧⣿⡇⠀
-⠀⠀⠄⠀⡹⣧⠄⠀⠀⠸⣿⣿⡁⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⡇⠸⢻⠇⠀⠀⠀⡼⣿⣼⣿⣿⡇⠀
-⠀⠐⣦⡤⡁⣿⠰⢠⠀⠀⢙⣇⠁⠻⣯⣍⡬⠏⠀⠀⠀⠠⠀⠀⠻⣧⣀⠼⢳⣠⣿⡄⢀⣠⡞⣴⣿⣿⠋⢨⡇⠀
-⠀⠀⠿⠂⠄⡟⣇⢸⡄⠀⠘⠛⣷⢴⣺⣿⡍⠀⠀⠀⠀⠀⠀⠀⠀⢠⠠⣵⣾⢟⣃⡠⢾⡏⣼⠏⢸⡟⠛⣿⡇⠀
-⠀⠐⣒⣀⣀⡟⠛⠾⢧⠀⠀⠀⢽⡙⠉⠐⠁⠀⠀⠀⢀⣴⣄⠀⠀⠀⠃⠛⣿⣹⠋⢀⣾⡼⠁⠀⢸⣿⣥⡿⡇⠀
-⠀⠈⠛⣿⢟⢣⠀⠀⠨⣧⡀⠀⠏⣧⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣨⣼⣿⠀⢸⣿⠀⠀⠀⢸⡏⠀⣷⡇⠀
-⠀⠠⡖⠀⠀⢸⠀⠀⢠⣿⣧⠀⠀⠸⣿⣟⡷⣶⣦⣤⠤⢤⣤⣤⣶⣶⢿⡟⢽⣏⠀⢸⣿⠀⠀⠀⠀⣷⠯⢿⡇⠀
-⠀⢠⣶⣶⣦⣼⣰⠀⠀⡿⠹⣧⠀⠀⣿⣸⣧⣿⣨⢿⠷⠒⠚⠛⠛⠛⠚⠛⠺⠯⠤⠚⠛⠓⠚⠓⠒⠻⣦⠀⡇⠀
-⠀⢸⣟⣿⣿⣿⠁⠀⠀⡇⠀⠞⣷⠀⠘⢿⣽⣿⣵⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠁⡇⠀
-⠀⢸⣿⣿⣿⣿⡆⠀⢀⣿⡷⡎⠉⢣⡀⠈⢿⡣⠻⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣖⡇⠀
-⠀⢸⣿⣿⣿⣿⠀⢠⠾⠃⠁⢸⡄⠀⢷⠀⠀⠻⣤⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⡇⠀
-⠠⣈⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⢁⠄
-"""
-
-
-banner = Add.Add(text, banner, center=True)
-
-print(Colorate.Diagonal(Colors.DynamicMIX((purple, light)), banner))
-def stage(text: str, symbol: str = 'ENJULY19', col1 = light, col2 = None) -> str:
+# print(Colorate.Diagonal(Colors.DynamicMIX((purple, light)), banner))
+def stage(text: str, symbol: str = 'HgAnh_7', col1 = light, col2 = None) -> str:
     if col2 is None:
-        col2 = light if symbol == 'ENJULY19' else purple
+        col2 = light if symbol == 'HgAnh_7' else purple
     return f""" {Col.Symbol(symbol, col1, dark)} {Colorate.Diagonal(Colors.DynamicMIX((purple, light)), text)}{light}"""
 
 v = input
@@ -676,8 +654,7 @@ def print(x,*k):
 
 
 
-_file = input(" ENTER FILE: ")
-
+_file = input(f" {a}NHẬP TÊN FILE:{b} ")
 
 
 
@@ -689,21 +666,21 @@ while True:
         break
     except FileNotFoundError:
 
-        _file = input(" ENTER FILE AGAIN (file not found): ")
+        _file = input(f" {a}NHẬP LẠI TÊN FILE (không tìm thấy file):{b} ")
         
 
 while True:
     try:
-        mode = int(input(" ENTER MODE: "))
+        mode = int(input(f" {a}NHẬP CHẾ ĐỘ:{b} "))
         if mode < 4:
             break
     except ValueError:
         pass
-moreobf = input(" DO YOU WANT MORE OBF? (y/n): ")
+moreobf = input(f" {a}BẠN CÓ MUỐN LÀM RỐI THÊM KHÔNG? (y/n):{b} ")
 
-antidebug = input(" DO YOU WANT ANTI DEBUG? (y/n): ")
+antidebug = input(f" {a}BẠN CÓ MUỐN CHỐNG DEBUG KHÔNG? (y/n):{b} ")
 
-method = input(" DO YOU WANT COMPILE? (y/n): ")
+method = input(f" {a}BẠN CÓ MUỐN BIÊN DỊCH KHÔNG? (y/n):{b} ")
 #code = ast.unparse(_moreobf(ast.parse(code)))
 check = 0
 code = _syntax(code)
@@ -713,13 +690,13 @@ if moreobf.upper() == "Y":
 checkver = f"""
 import sys
 if '{sys.version[0]+sys.version[1]+sys.version[2]+sys.version[3]}' not in sys.version:
-    input("Your python version does not work on this code, please install {sys.version[0]+sys.version[1]+sys.version[2]+sys.version[3]}")
+    input("\033[1;91mPhiên bản Python của bạn không tương thích với đoạn mã này, vui lòng cài đặt {sys.version[0]+sys.version[1]+sys.version[2]+sys.version[3]}\033[0m")
     __import__("sys").exit()
 """
 author = f"""
 ((
-    ((([["ENJULY19"],
-    ["https://github.com/hngocuyen/enjuly19/"],
+    ((([["HgAnh_7"],
+    ["https://t.me/HgAnh_7"],
     ["PYTHON"],
     3.11
     ],
@@ -738,7 +715,7 @@ ch = set()
 am = {'builtins', '__main__'}
 
 def vv():
-    raise MemoryError('>> GOOD LUCK!! CONMEMAY') from None
+    raise MemoryError('>> Hãy tôn trọng tác giả!!!') from None
 
 def cb(fn):
     if callable(fn) and fn.__module__ not in am:
@@ -849,35 +826,35 @@ else:
     code = author + var + f"""
 
 def bytecode():
-    ngocuyencoder = globals().update
+    HgAnhEncoder = globals().update
     if True:
-        ngocuyencoder({ngoac}**{ngoac} _hex({_uni("en")}): {_temp} {_f} {_temp1}, {_temp} {_i} {_vars}({___import__}(_hex({_uni("marshal")}))).items() if {_movdiv}({_temp}) and {_temp1} == _hex({_uni("loads")}){_ngoac}, **{ngoac}{_temp1}: {_temp} {_f} {_temp1}, {_temp} {_i} {_vars}({___import__}(_hex({_uni("marshal")}))).items() if {_movdiv}({_temp}) and {_temp1} != _hex({_uni("loads")}){_ngoac}{_ngoac})
-    else:"ngocuyencoder"
+        HgAnhEncoder({ngoac}**{ngoac} _hex({_uni("Hoang")}): {_temp} {_f} {_temp1}, {_temp} {_i} {_vars}({___import__}(_hex({_uni("marshal")}))).items() if {_movdiv}({_temp}) and {_temp1} == _hex({_uni("loads")}){_ngoac}, **{ngoac}{_temp1}: {_temp} {_f} {_temp1}, {_temp} {_i} {_vars}({___import__}(_hex({_uni("marshal")}))).items() if {_movdiv}({_temp}) and {_temp1} != _hex({_uni("loads")}){_ngoac}{_ngoac})
+    else:"HgAnhEncoder"
     if 1>2:
         {obfint(3)}
     else:
-        ngocuyencoder({ngoac}**{ngoac}_hex({_uni("july")}): {_temp} {_f} {_temp1}, {_temp} {_i} {_vars}({___import__}(_hex({_uni("zlib")}))).items() if {_movdiv}({_temp}) and {_temp1} == _hex({_uni("decompress")}){_ngoac}, **{ngoac}{_temp1}: {_temp} {_f} {_temp1}, {_temp} {_i} {_vars}({___import__}(_hex({_uni("zlib")}))).items() if {_movdiv}({_temp}) and {_temp1} != _hex({_uni("decompress")}){_ngoac}{_ngoac})
-    ngocuyencoder({ngoac}**{ngoac}_hex({_uni("birth")}): {_temp} {_f} {_temp1}, {_temp} {_i} {_vars}({___import__}(_hex({_uni("bz2")}))).items() if {_movdiv}({_temp}) and {_temp1} == _hex({_uni("decompress")}){_ngoac}, **{ngoac}{_temp1}: {_temp} {_f} {_temp1}, {_temp} {_i} {_vars}({___import__}(_hex({_uni("bz2")}))).items() if {_movdiv}({_temp}) and {_temp1} != _hex({_uni("decompress")}){_ngoac}{_ngoac})
-    ngocuyencoder()
-    ngocuyencoder({ngoac}**{ngoac}_hex({_uni("_19")}): {_t} {_f} {_temp1}, {_t} {_i} {_vars}({___import__}(_hex({_uni("base64")}))).items() if {_movdiv}({_t}) and {_temp1} == _hex({_uni("b85decode")}){_ngoac}, **{ngoac}{_temp1}: {_t} {_f} {_temp1}, {_t} {_i} {_vars}({___import__}(_hex({_uni("base64")}))).items() if {_movdiv}({_t}) and {_temp1} != _hex({_uni("b85decode")}){_ngoac}{_ngoac})
-    ngocuyencoder()
-    ngocuyencoder({ngoac}**{ngoac}_hex({_uni("ngocuyencoder")}): {_t} {_f} {_temp1}, {_t} {_i} {_vars}({___import__}(_hex({_uni("builtins")}))).items() if {_movdiv}({_t}) and {_temp1} == _hex({_uni("exec")}){_ngoac}, **{ngoac}{_temp1}: {_t} {_f} {_temp1}, {_t} {_i} {_vars}({___import__}(_hex({_uni("builtins")}))).items() if {_movdiv}({_t}) and {_temp1} != _hex({_uni("eval")}){_ngoac}{_ngoac})
+        HgAnhEncoder({ngoac}**{ngoac}_hex({_uni("Anh")}): {_temp} {_f} {_temp1}, {_temp} {_i} {_vars}({___import__}(_hex({_uni("zlib")}))).items() if {_movdiv}({_temp}) and {_temp1} == _hex({_uni("decompress")}){_ngoac}, **{ngoac}{_temp1}: {_temp} {_f} {_temp1}, {_temp} {_i} {_vars}({___import__}(_hex({_uni("zlib")}))).items() if {_movdiv}({_temp}) and {_temp1} != _hex({_uni("decompress")}){_ngoac}{_ngoac})
+    HgAnhEncoder({ngoac}**{ngoac}_hex({_uni("birth")}): {_temp} {_f} {_temp1}, {_temp} {_i} {_vars}({___import__}(_hex({_uni("bz2")}))).items() if {_movdiv}({_temp}) and {_temp1} == _hex({_uni("decompress")}){_ngoac}, **{ngoac}{_temp1}: {_temp} {_f} {_temp1}, {_temp} {_i} {_vars}({___import__}(_hex({_uni("bz2")}))).items() if {_movdiv}({_temp}) and {_temp1} != _hex({_uni("decompress")}){_ngoac}{_ngoac})
+    HgAnhEncoder()
+    HgAnhEncoder({ngoac}**{ngoac}_hex({_uni("_2007")}): {_t} {_f} {_temp1}, {_t} {_i} {_vars}({___import__}(_hex({_uni("base64")}))).items() if {_movdiv}({_t}) and {_temp1} == _hex({_uni("b85decode")}){_ngoac}, **{ngoac}{_temp1}: {_t} {_f} {_temp1}, {_t} {_i} {_vars}({___import__}(_hex({_uni("base64")}))).items() if {_movdiv}({_t}) and {_temp1} != _hex({_uni("b85decode")}){_ngoac}{_ngoac})
+    HgAnhEncoder()
+    HgAnhEncoder({ngoac}**{ngoac}_hex({_uni("HgAnhEncoder")}): {_t} {_f} {_temp1}, {_t} {_i} {_vars}({___import__}(_hex({_uni("builtins")}))).items() if {_movdiv}({_t}) and {_temp1} == _hex({_uni("exec")}){_ngoac}, **{ngoac}{_temp1}: {_t} {_f} {_temp1}, {_t} {_i} {_vars}({___import__}(_hex({_uni("builtins")}))).items() if {_movdiv}({_t}) and {_temp1} != _hex({_uni("eval")}){_ngoac}{_ngoac})
 bytecode()
 
-_en  {'  '* 999}={part1}
-_july  {'  '* 999}={part2}
+_Hoang  {'  '* 999}={part1}
+_Anh  {'  '* 999}={part2}
 _birth  {'  '* 999}={part3}
-__19  {'  '* 999}={part4}
+__2007  {'  '* 999}={part4}
 try:
-    ngocuyencoder(
-    en(
-    july(
+    HgAnhEncoder(
+    Hoang(
+    Anh(
     birth(
-    _19(
-    _en+_july+_birth+__19)))))
+    _2007(
+    _Hoang+_Anh+_birth+__2007)))))
 except Exception as e:
     print(e)
 
 """
-open("enjuly-" + _file, "w", encoding="utf8").write(str(code))
-print(" Save in ", "enjuly-" + _file)
+open("obf_" + _file, "w", encoding="utf8").write(str(code))
+print(" Đã lưu tại ", "obf_" + _file)
