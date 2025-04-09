@@ -1,20 +1,18 @@
-# Share By @HgAnh_7
 
-import os
-import re
-import ast
-import bz2
+
+
+
 import sys
-import time
-import zlib
-import base64
+import ast
 import random
+import zlib
 import marshal
-import traceback
+import base64
+import bz2
+import re
 from pystyle import *
-
 if sys.version_info < (3, 10):
-    print("\033[1;91mCài đặt Python Phiên bản = 3.10 hoặc > 3.10 Để Sử dụng Mã này\033[0m")
+    print("Install Python Version = 3.10 or > 3.10 To Use This Code ")
     sys.exit()
 
 def _rd():
@@ -52,10 +50,49 @@ def obfstr(v):
         _str_ = f"(lambda  : (lambda : (lambda : {_join}(( {_list}({_map}({_hexrun}, {x})) )))())())()"
         return _str_
 
+import random
+"""
+def obfstr(string):
+    keys = []
+    magic = random.randint(1000000, 9999999)
+    
+    for char in string:
+        logic = random.randint(1, 4)
+        if logic == 1:
+            logic = '+'
+        elif logic == 2:
+            logic = '*'
+        elif logic == 3:
+            logic = '<<'
+        else:
+            logic = '^'
+        
+        key = ord(char)
+        key2 = magic
+        
+        if logic == "^":
+            key3 = ~key ^ ~magic
+            keys.append(f"(lambda: chr({key2} ^ {key3}))()")
+        elif logic == "<<":
+            magic = random.randint(1, 19)
+            key3 = key << magic
+            PT = ">>"
+            keys.append(f"(lambda: chr({key3} {PT} {magic}))()")
+        else:
+            if logic == "+":
+                PT = "-"
+            else:
+                PT = "//"
+            key3 = eval(f"{key} {logic} {magic}")
+            keys.append(f"(lambda: chr({key3} {PT} {key2}))()")
+    
+    return f"(lambda: ''.join([{', '.join(keys)}]))()"
+
+""" # USE IT IF U WANT POWER STRING
 def _byte(v):
     byte_array = bytearray()
     byte_array.extend(v.to_bytes((v.bit_length() + 7) // 8, 'big'))
-    return b"enherlyswar/" + byte_array
+    return b"enjuly19/" + byte_array
 
 def obfint(v):
     n = rd()
@@ -65,10 +102,17 @@ def obfint(v):
         else:
             return f'(lambda: (lambda {n}: {n} - (lambda : H2SbF7(({(1+0x7777)} ) ) )())(0) == 1)()'
     else:
+        #return f"""H2SbF7({(v+0x7777)}) if {_str}({_type}({_bool}(H2SbF7({(v+0x7777)})))) == {_str}({_type}({_int}({randomint()})>{_int}({randomint()})<{_int}({randomint()})>{_int}({randomint()}))) else H2SbF7({v+0x7777})"""
+        #return f"""(lambda {rd()} : H2SbF7({(v+0x7777)})("datchuche")"""
+        #return f"""(lambda : H2SbF7({(v+0x7777)})//eval({obfstr('1')}))()"""
+        #print(fr""" unhexlify('{_byte(int(v))}') """)
+        #return fr"""(lambda : """
         return f'(lambda: c2h6({_byte(int(v))}))()'
+
 
 def varsobf(v):
     return f"""({(v)}) if bool(bool(bool({(v)}))) < bool(type(int({randomint()})>int({randomint()})<int({randomint()})>int({randomint()}))) and bool(str(str({randomint()})>int({randomint()})<int({randomint()})>int({randomint()}))) > 2 else {v}"""
+
 
 _join = "h2o"
 _lambda = "ᅠ"
@@ -97,8 +141,10 @@ def unicodeobf(x):
         b.append(j)
     return b
 
+
 def _uni(x):
     return unicodeobf(x)
+
 
 __bool = rd()
 __exx = rd()
@@ -119,28 +165,30 @@ globals()['{_movdiv}'] =  {varsobf('callable')}
 globals()['{_eval}'] =  {varsobf('eval')}
 globals()['{_list}'] =  {varsobf('list')}
 globals()['{_map}'] =  {varsobf('map')}
+
 globals()['{___import__}'] =  {varsobf('__import__')}
+
 globals()['tryᅠ'] =  {varsobf('print')}
 globals()['exceptᅠ'] =  {varsobf('input')}
-def {_join}(herlys,*k):
+def {_join}(july,*k):
     if k:
-        enherlyswar = '+'
+        enjuly19 = '+'
         op = "+"
     else:
-        enherlyswar = ''
+        enjuly19 = ''
         op = ''
     globals()['{__exx}'] = {obfint(True)}
     globals()['{_join}'] = {_join}
     globals()['{_str}'] = {_str}
-    globals()['herlys'] = herlys
-    for globals()['enherlyswar_'] in globals()['herlys']:
-        if not {__exx}:globals()['enherlyswar_'] += (lambda : '')()
-        enherlyswar += {_str}(enherlyswar_);f = {obfint(True)}
-    return enherlyswar
+    globals()['july'] = july
+    for globals()['enjuly19_'] in globals()['july']:
+        if not {__exx}:globals()['enjuly19_'] += (lambda : '')()
+        enjuly19 += {_str}(enjuly19_);f = {obfint(True)}
+    return enjuly19
 def H2SbF7(x):
     return {_int}(x-0x7777)
 def c2h6(e):
-    br = bytearray(e[len(b"enherlyswar/"):])
+    br = bytearray(e[len(b"enjuly19/"):])
     r = 0
     for b in br:
         r = r * 256 + b
@@ -179,10 +227,25 @@ if {obfint(True)}:
         for _hex in j:
             {_argshexrun} += ({_hexrun}(_hex))
         return {_argshexrun}
-else:"enherlyswar"
+else:"enjuly19"
 """
 
+
+ANTI_PYCDC = f"""
+try:pass
+except:pass
+else:pass
+finally:int(2008-2006)
+try:
+    def ___(__, _: str, ngocuyen = True, deptrai = True) -> None:pass
+except:pass
+finally:pass
+"""
+
+import ast
 def _moreobf(tree):
+    import random
+
     def rd():
         return str(random.randint(0x1E000000000, 0x7E000000000))
 
@@ -221,6 +284,7 @@ def _moreobf(tree):
     def bl(body):
         var = "__"+rd()
         en = "__"+rd()
+
         tb = [
             ast.AugAssign(
                 target=ast.Name(id=var), 
@@ -246,6 +310,7 @@ def _moreobf(tree):
                 finalbody=[]
             )
         ]
+        
         for i in body:
             tb[1].handlers[0].body.append(
                 ast.If(
@@ -264,18 +329,23 @@ def _moreobf(tree):
                     orelse=[]
                 )
             )
+        
         tb[1].handlers[0].body.extend(junk(en, len(body) + 1))
+        
         node = ast.Assign(
             targets=[ast.Name(id=var)], 
             value=ast.Constant(value=0), 
             lineno=None
         )
+        
         return [node] + tb
 
     def _bl(node):
         olb = node.body
+
         var = "__"+rd()
         en = "__"+rd()
+
         tb = [
             ast.AugAssign(
                 target=ast.Name(id=var), 
@@ -328,7 +398,6 @@ def _moreobf(tree):
             )
         ] + tb
         return node
-
     def on(node):
         if isinstance(node, ast.FunctionDef):
             return _bl(node)
@@ -345,6 +414,7 @@ def _moreobf(tree):
             nb.append(node)
     tree.body = nb
     return tree
+
 
 def __moreobf(x):
     return ast.unparse(_moreobf(ast.parse(x)))
@@ -368,7 +438,7 @@ def _syntax(x):
         if node.name:
             for statement in node.body:
                 ten = ast.Try(
-                    body=[ast.parse(f"{_eval}('0/0')"),ast.parse(f"""if "quanhau" == "deptrai":{rd()},{rd()},{rd()},{rd()}\nelse:pass""")],
+                    body=[ast.parse(f"{_eval}('0/0')"),ast.parse(f"""if "ngocuyen" == "deptrai":{rd()},{rd()},{rd()},{rd()}\nelse:pass""")],
                     handlers=[
                         ast.ExceptHandler(
                             type=ast.Name(id='ZeroDivisionError', ctx=ast.Load()),
@@ -381,7 +451,6 @@ def _syntax(x):
                 )
                 node.body[node.body.index(statement)] = ten
             return node
-
     def z(statement):
         return ast.Try(
             body=[ast.parse(f"{_eval}('0/0')")],
@@ -401,10 +470,11 @@ def _syntax(x):
             v(node)
     st = ast.unparse(tree)
     return st
-
 def obfuscate(node):
     for i in ast.walk(node):
         if isinstance(i, ast.Global):
+            continue
+        if isinstance(i, ast.Nonlocal):
             continue
         for f, v in ast.iter_fields(i):
             if isinstance(v, list):
@@ -433,7 +503,6 @@ def obfuscate(node):
                         setattr(i, f, fm(v))
                 except Exception as e:
                     print(f"Error processing field {f} with value {v}: {e}")
-
 def rename_function(node, ol, nn):
     for i in ast.walk(node):
         if isinstance(i, ast.FunctionDef) and i.name == ol:
@@ -495,11 +564,12 @@ def random_match_case():
         ],
     )
 
+
 def trycatch(body, loop):
     ar = []
     for x in body:
         j = x
-        for _ in range(1): 
+        for _ in range(1): #use 2 if u want rip 
             j = ast.Try(
                 body=[random_match_case(),
 
@@ -527,6 +597,7 @@ def trycatch(body, loop):
         ar.append(j)
     return ar
 
+
 def obf(code):
     def ps(x):
         return ast.parse(x)
@@ -540,26 +611,76 @@ def obf(code):
     j = ast_to_code(tbd)
     return j
 
-print("\033[1;97m╔═══════════════════════╗")         
-print("║ \033[1;96mCông Cụ Mã Hóa PYTHON \033[97m║")
-print("╚═══════════════════════╝")
-print("""
-ENHERLYS OBFUSCATOR
-AST MẠNH MẼ
-CHUỖI SỬ DỤNG BIỂU THỨC LAMBDA
-INT VÀ BOOL SỬ DỤNG BIỂU THỨC TENARY
-THỬ CATCH, MATCH CASE [THÊM RÁC VAR VÀ HÀM KHÔNG XÁC ĐỊNH]
 
-CHỐNG HOOKING: BLOCK HOOKING
-BIÊN DỊCH: VỚI MARSHAL(TRÌNH BIÊN DỊCH KHÁC PYC), ZLIB, BZ2, BASE64
+dark = Col.dark_gray
+light = Col.light_gray
+purple = Colors.StaticMIX((Col.green, Col.yellow))
+bpurple = Colors.StaticMIX((Col.pink, Col.blue, Col.blue))
 
-\033[97m[\033[96m*\033[97m] \033[1;96mCHẾ ĐỘ 1\033[97m: \033[1;32mOBF THẤP \033[1;97m(DÀNH CHO TẤT CẢ TỆP) (DỄ DÀNG ĐẾN DEOBF)
-\033[97m[\033[96m*\033[97m] \033[1;96mCHẾ ĐỘ 2\033[97m: \033[1;32mTRUNG BÌNH \033[1;97m(LỰA CHỌN TỐT NHẤT) (CHUỖI ĐẦY ĐỦ, INT, OBF BOOL)
-\033[97m[\033[96m*\033[97m] \033[1;96mCHẾ ĐỘ 3\033[97m: \033[1;32mCAO \033[1;97m(KHÔNG KHUYẾN NGHỊ) (ĐÂY LÀ CHẾ ĐỘ TRUNG BÌNH NHƯNG X2 SPAM)
-════════════════════════════════════════════════════════\033[0m
-""")
+text = f"""
+ ENJULY19 OBFUSCATOR
+ POWERFULL AST
+ STRING USE LAMBDA EXPRESSION
+ INT AND BOOL USE TENARY EXPRESSION
+ TRY CATCH , MATCH CASE [ADD TRASH VAR AND FUNCTION NOT DEFIND]
 
-_file = input("\033[97m[\033[96m*\033[97m] \033[1;96mFile cần mã hóa\033[97m:\033[0m ")
+
+ MODE 1 : LOW OBF (FOR ALL FILE) (EZ TO DEOBF)
+ MODE 2 : MEDIUM (BEST CHOICE) (FULL STRING,INT,BOOL OBF)
+ MODE 3 : HIGH (NOT RECOMMEND) (IT IS MEDIUM MODE BUT X2 SPAM)
+
+ ANTI HOOKING : BLOCK HOOKING
+ COMPILER : WITH MARSHAL(ANTI PYC DECOMPILER),ZLIB,BZ2,BASE64
+"""
+
+banner = f"""
+
+⠐⠀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⡀⠀⠀⠀⠀⠀⢀⣀⢀⠀⠀⣀⣀⣀⣀⠀⣀⣀⣀⣀⢀⡀⠀⠀⠀⠀⢀⡈⠢
+⠀⠈⠭⣿⠏⠈⢻⣿⡿⠛⠉⠁⠀⠁⠀⠀⠀⠀⠀⢈⣈⣤⣤⣤⣀⡀⠀⠀⠀⠊⡊⠓⡦⡀⠀⠀⠀⠀⠀⠀⡇⠈
+⠀⠀⠒⣧⣦⣠⠞⠁⠀⠀⠀⠀⠀⠀⢀⣀⣤⣶⣿⠯⠽⠧⠼⠷⢶⠿⢓⣀⣀⣆⡀⣠⣈⠻⣦⡀⣀⣠⡀⠀⡇⠀
+⠀⠰⣟⣷⡟⠁⠀⠀⠀⠀⠀⢀⡤⠖⢫⣍⢀⣾⣯⠀⣞⡆⠀⣏⢻⣠⣄⡀⠉⠙⣻⣿⡻⣷⡈⢻⣿⣿⣷⣾⡇⠀
+⠀⢠⣶⡟⠁⠀⠀⠀⣀⣴⠚⠉⠀⣠⣿⠞⠋⠻⣿⡀⠀⠀⠀⠈⠙⢻⣟⠳⣆⠀⠙⢯⡛⣿⢻⡇⡟⢩⢟⡟⡇⠀
+⠀⢸⣿⠀⠀⠀⡠⣾⣿⢉⡀⢀⡆⡿⢃⣀⠀⠀⠘⣷⣀⢠⡄⠀⠀⠀⣙⠓⣿⣶⡀⠀⠛⠻⣾⣴⣱⣣⢖⣱⡇⠀
+⠀⠸⣿⣧⢤⡎⣰⣣⣶⡏⡧⣄⣵⡿⠭⠻⠃⠀⠀⢣⣹⠸⣿⣤⡐⠛⠛⠷⡆⠈⠑⠢⠤⣀⠹⣿⡿⠿⣿⡿⡇⠀
+⠀⢈⡿⣻⠉⡇⡿⠟⢉⡇⠱⣿⡁⡇⠀⠀⢀⣀⠀⠸⣧⠰⡇⢈⣙⡧⣄⡰⣤⣀⣠⣶⠒⠉⠀⠈⣧⣀⠀⣿⡇⠀
+⠀⠀⣀⠈⠶⣿⠁⠀⠘⠣⢻⠇⣳⣷⣶⣶⣿⡟⠀⠀⠙⢷⣿⠘⣽⣿⣿⣿⣿⣄⠀⢻⠀⠀⠀⠀⡸⡿⠤⣷⡇⠀
+⠀⠐⠋⠀⢀⡿⠀⠘⠀⢰⢸⣿⡿⢿⣿⠏⢉⣇⠀⠀⠀⠀⠙⠃⣾⣿⣁⣈⡻⣿⣯⣿⡄⠀⠀⣶⣇⢹⣧⣿⡇⠀
+⠀⠀⠄⠀⡹⣧⠄⠀⠀⠸⣿⣿⡁⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⡇⠸⢻⠇⠀⠀⠀⡼⣿⣼⣿⣿⡇⠀
+⠀⠐⣦⡤⡁⣿⠰⢠⠀⠀⢙⣇⠁⠻⣯⣍⡬⠏⠀⠀⠀⠠⠀⠀⠻⣧⣀⠼⢳⣠⣿⡄⢀⣠⡞⣴⣿⣿⠋⢨⡇⠀
+⠀⠀⠿⠂⠄⡟⣇⢸⡄⠀⠘⠛⣷⢴⣺⣿⡍⠀⠀⠀⠀⠀⠀⠀⠀⢠⠠⣵⣾⢟⣃⡠⢾⡏⣼⠏⢸⡟⠛⣿⡇⠀
+⠀⠐⣒⣀⣀⡟⠛⠾⢧⠀⠀⠀⢽⡙⠉⠐⠁⠀⠀⠀⢀⣴⣄⠀⠀⠀⠃⠛⣿⣹⠋⢀⣾⡼⠁⠀⢸⣿⣥⡿⡇⠀
+⠀⠈⠛⣿⢟⢣⠀⠀⠨⣧⡀⠀⠏⣧⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣨⣼⣿⠀⢸⣿⠀⠀⠀⢸⡏⠀⣷⡇⠀
+⠀⠠⡖⠀⠀⢸⠀⠀⢠⣿⣧⠀⠀⠸⣿⣟⡷⣶⣦⣤⠤⢤⣤⣤⣶⣶⢿⡟⢽⣏⠀⢸⣿⠀⠀⠀⠀⣷⠯⢿⡇⠀
+⠀⢠⣶⣶⣦⣼⣰⠀⠀⡿⠹⣧⠀⠀⣿⣸⣧⣿⣨⢿⠷⠒⠚⠛⠛⠛⠚⠛⠺⠯⠤⠚⠛⠓⠚⠓⠒⠻⣦⠀⡇⠀
+⠀⢸⣟⣿⣿⣿⠁⠀⠀⡇⠀⠞⣷⠀⠘⢿⣽⣿⣵⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠁⡇⠀
+⠀⢸⣿⣿⣿⣿⡆⠀⢀⣿⡷⡎⠉⢣⡀⠈⢿⡣⠻⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣖⡇⠀
+⠀⢸⣿⣿⣿⣿⠀⢠⠾⠃⠁⢸⡄⠀⢷⠀⠀⠻⣤⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⡇⠀
+⠠⣈⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⢁⠄
+"""
+
+
+banner = Add.Add(text, banner, center=True)
+
+print(Colorate.Diagonal(Colors.DynamicMIX((purple, light)), banner))
+def stage(text: str, symbol: str = 'ENJULY19', col1 = light, col2 = None) -> str:
+    if col2 is None:
+        col2 = light if symbol == 'ENJULY19' else purple
+    return f""" {Col.Symbol(symbol, col1, dark)} {Colorate.Diagonal(Colors.DynamicMIX((purple, light)), text)}{light}"""
+
+v = input
+_v = print
+def input(x):
+    return v(stage(x))
+def print(x,*k):
+    return _v(stage(x),*k)
+
+
+
+_file = input(" ENTER FILE: ")
+
+
+
+
 
 while True:
     try:
@@ -567,34 +688,49 @@ while True:
             code = file.read()
         break
     except FileNotFoundError:
-        _file = input("\033[97m[\033[96m*\033[97m] \033[1;96mNhập Lại Tệp \033[1;32m(không tìm thấy tệp)\033[97m:\033[0m ")
+
+        _file = input(" ENTER FILE AGAIN (file not found): ")
         
+
 while True:
     try:
-        mode = int(input("\033[97m[\033[96m*\033[97m] \033[1;96mChọn Chế Độ Mã Hóa\033[97m:\033[0m "))
+        mode = int(input(" ENTER MODE: "))
         if mode < 4:
             break
     except ValueError:
         pass
-moreobf = input("\033[97m[\033[96m*\033[97m] \033[1;96mBạn Có Muốn Thêm OBF Không? \033[1;92m(y/n)\033[97m: ")
+moreobf = input(" DO YOU WANT MORE OBF? (y/n): ")
 
-antidebug = input("\033[97m[\033[96m*\033[97m] \033[1;96mBạn Có Muốn Thêm Chống Gỡ Lỗi Không? \033[1;92m(y/n)\033[97m: ")
+antidebug = input(" DO YOU WANT ANTI DEBUG? (y/n): ")
 
-method = input("\033[97m[\033[96m*\033[97m] \033[1;96mBạn Có Muốn Biên Dịch Không? \033[1;92m(y/n)\033[97m: ")
-
+method = input(" DO YOU WANT COMPILE? (y/n): ")
+#code = ast.unparse(_moreobf(ast.parse(code)))
 check = 0
 code = _syntax(code)
 if moreobf.upper() == "Y":
     code = __moreobf(code)
     check = 5
 checkver = f"""
-
+import sys
 if '{sys.version[0]+sys.version[1]+sys.version[2]+sys.version[3]}' not in sys.version:
     input("Your python version does not work on this code, please install {sys.version[0]+sys.version[1]+sys.version[2]+sys.version[3]}")
     __import__("sys").exit()
 """
-
-author = "# Share By @HgAnh_7"
+author = f"""
+((
+    ((([["ENJULY19"],
+    ["https://github.com/hngocuyen/enjuly19/"],
+    ["PYTHON"],
+    3.11
+    ],
+    [__import__("builtins").exec(
+    {checkver.encode()})
+    ])
+                )
+            )
+        )
+    )
+"""
 anti = r"""
 import traceback, marshal
 
@@ -602,7 +738,7 @@ ch = set()
 am = {'builtins', '__main__'}
 
 def vv():
-    raise MemoryError('>> GOOD LUCK!! DITCUMAY') from None
+    raise MemoryError('>> GOOD LUCK!! CONMEMAY') from None
 
 def cb(fn):
     if callable(fn) and fn.__module__ not in am:
@@ -682,6 +818,7 @@ if antidebug.upper() == "Y":
 for i in range(mode):
     code = obf(code)
 
+
 if method.upper() != "Y":
     code = var + code
     if check == 5:
@@ -696,7 +833,7 @@ else:
             code = __moreobf(code)
         except:
             code = __moreobf(code)
-    code = code
+    code = ANTI_PYCDC + code
     code = marshal.dumps(compile(code, "", "exec"))
     code = zlib.compress(code)
     code = bz2.compress(code)
@@ -712,36 +849,35 @@ else:
     code = author + var + f"""
 
 def bytecode():
-    herlyswar = globals().update
+    ngocuyencoder = globals().update
     if True:
-        herlyswar({ngoac}**{ngoac} _hex({_uni("en")}): {_temp} {_f} {_temp1}, {_temp} {_i} {_vars}({___import__}(_hex({_uni("marshal")}))).items() if {_movdiv}({_temp}) and {_temp1} == _hex({_uni("loads")}){_ngoac}, **{ngoac}{_temp1}: {_temp} {_f} {_temp1}, {_temp} {_i} {_vars}({___import__}(_hex({_uni("marshal")}))).items() if {_movdiv}({_temp}) and {_temp1} != _hex({_uni("loads")}){_ngoac}{_ngoac})
-    else:"herlyswar"
+        ngocuyencoder({ngoac}**{ngoac} _hex({_uni("en")}): {_temp} {_f} {_temp1}, {_temp} {_i} {_vars}({___import__}(_hex({_uni("marshal")}))).items() if {_movdiv}({_temp}) and {_temp1} == _hex({_uni("loads")}){_ngoac}, **{ngoac}{_temp1}: {_temp} {_f} {_temp1}, {_temp} {_i} {_vars}({___import__}(_hex({_uni("marshal")}))).items() if {_movdiv}({_temp}) and {_temp1} != _hex({_uni("loads")}){_ngoac}{_ngoac})
+    else:"ngocuyencoder"
     if 1>2:
         {obfint(3)}
     else:
-        herlyswar({ngoac}**{ngoac}_hex({_uni("herlys")}): {_temp} {_f} {_temp1}, {_temp} {_i} {_vars}({___import__}(_hex({_uni("zlib")}))).items() if {_movdiv}({_temp}) and {_temp1} == _hex({_uni("decompress")}){_ngoac}, **{ngoac}{_temp1}: {_temp} {_f} {_temp1}, {_temp} {_i} {_vars}({___import__}(_hex({_uni("zlib")}))).items() if {_movdiv}({_temp}) and {_temp1} != _hex({_uni("decompress")}){_ngoac}{_ngoac})
-    herlyswar({ngoac}**{ngoac}_hex({_uni("birth")}): {_temp} {_f} {_temp1}, {_temp} {_i} {_vars}({___import__}(_hex({_uni("bz2")}))).items() if {_movdiv}({_temp}) and {_temp1} == _hex({_uni("decompress")}){_ngoac}, **{ngoac}{_temp1}: {_temp} {_f} {_temp1}, {_temp} {_i} {_vars}({___import__}(_hex({_uni("bz2")}))).items() if {_movdiv}({_temp}) and {_temp1} != _hex({_uni("decompress")}){_ngoac}{_ngoac})
-    herlyswar()
-    herlyswar({ngoac}**{ngoac}_hex({_uni("_war")}): {_t} {_f} {_temp1}, {_t} {_i} {_vars}({___import__}(_hex({_uni("base64")}))).items() if {_movdiv}({_t}) and {_temp1} == _hex({_uni("b85decode")}){_ngoac}, **{ngoac}{_temp1}: {_t} {_f} {_temp1}, {_t} {_i} {_vars}({___import__}(_hex({_uni("base64")}))).items() if {_movdiv}({_t}) and {_temp1} != _hex({_uni("b85decode")}){_ngoac}{_ngoac})
-    herlyswar()
-    herlyswar({ngoac}**{ngoac}_hex({_uni("herlyswar")}): {_t} {_f} {_temp1}, {_t} {_i} {_vars}({___import__}(_hex({_uni("builtins")}))).items() if {_movdiv}({_t}) and {_temp1} == _hex({_uni("exec")}){_ngoac}, **{ngoac}{_temp1}: {_t} {_f} {_temp1}, {_t} {_i} {_vars}({___import__}(_hex({_uni("builtins")}))).items() if {_movdiv}({_t}) and {_temp1} != _hex({_uni("eval")}){_ngoac}{_ngoac})
+        ngocuyencoder({ngoac}**{ngoac}_hex({_uni("july")}): {_temp} {_f} {_temp1}, {_temp} {_i} {_vars}({___import__}(_hex({_uni("zlib")}))).items() if {_movdiv}({_temp}) and {_temp1} == _hex({_uni("decompress")}){_ngoac}, **{ngoac}{_temp1}: {_temp} {_f} {_temp1}, {_temp} {_i} {_vars}({___import__}(_hex({_uni("zlib")}))).items() if {_movdiv}({_temp}) and {_temp1} != _hex({_uni("decompress")}){_ngoac}{_ngoac})
+    ngocuyencoder({ngoac}**{ngoac}_hex({_uni("birth")}): {_temp} {_f} {_temp1}, {_temp} {_i} {_vars}({___import__}(_hex({_uni("bz2")}))).items() if {_movdiv}({_temp}) and {_temp1} == _hex({_uni("decompress")}){_ngoac}, **{ngoac}{_temp1}: {_temp} {_f} {_temp1}, {_temp} {_i} {_vars}({___import__}(_hex({_uni("bz2")}))).items() if {_movdiv}({_temp}) and {_temp1} != _hex({_uni("decompress")}){_ngoac}{_ngoac})
+    ngocuyencoder()
+    ngocuyencoder({ngoac}**{ngoac}_hex({_uni("_19")}): {_t} {_f} {_temp1}, {_t} {_i} {_vars}({___import__}(_hex({_uni("base64")}))).items() if {_movdiv}({_t}) and {_temp1} == _hex({_uni("b85decode")}){_ngoac}, **{ngoac}{_temp1}: {_t} {_f} {_temp1}, {_t} {_i} {_vars}({___import__}(_hex({_uni("base64")}))).items() if {_movdiv}({_t}) and {_temp1} != _hex({_uni("b85decode")}){_ngoac}{_ngoac})
+    ngocuyencoder()
+    ngocuyencoder({ngoac}**{ngoac}_hex({_uni("ngocuyencoder")}): {_t} {_f} {_temp1}, {_t} {_i} {_vars}({___import__}(_hex({_uni("builtins")}))).items() if {_movdiv}({_t}) and {_temp1} == _hex({_uni("exec")}){_ngoac}, **{ngoac}{_temp1}: {_t} {_f} {_temp1}, {_t} {_i} {_vars}({___import__}(_hex({_uni("builtins")}))).items() if {_movdiv}({_t}) and {_temp1} != _hex({_uni("eval")}){_ngoac}{_ngoac})
 bytecode()
 
 _en  {'  '* 999}={part1}
-_herlys  {'  '* 999}={part2}
+_july  {'  '* 999}={part2}
 _birth  {'  '* 999}={part3}
-__war  {'  '* 999}={part4}
+__19  {'  '* 999}={part4}
 try:
-    herlyswar(
+    ngocuyencoder(
     en(
-    herlys(
+    july(
     birth(
-    _war(
-    _en+_herlys+_birth+__war)))))
+    _19(
+    _en+_july+_birth+__19)))))
 except Exception as e:
     print(e)
 
 """
-open("hganh7-" + _file, "w", encoding="utf8").write(str(code))
-print("\033[97m[\033[96m*\033[97m] \033[1;91mTên File Đã Mã Hóa Là", "hganh7-" + _file)
-time.sleep(5)
+open("enjuly-" + _file, "w", encoding="utf8").write(str(code))
+print(" Save in ", "enjuly-" + _file)
