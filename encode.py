@@ -8,7 +8,7 @@ import marshal
 import base64
 import bz2
 import re
-# from pystyle import *
+from pystyle import *
 if sys.version_info < (3, 10):
     print("\033[1;91mCài đặt Python phiên bản 3.10 hoặc mới hơn để sử dụng công cụ này ")
     sys.exit()
@@ -690,7 +690,7 @@ if moreobf.upper() == "Y":
 checkver = f"""
 import sys
 if '{sys.version[0]+sys.version[1]+sys.version[2]+sys.version[3]}' not in sys.version:
-    input("\033[1;91mPhiên bản Python của bạn không tương thích với đoạn mã này, vui lòng cài đặt {sys.version[0]+sys.version[1]+sys.version[2]+sys.version[3]}\033[0m")
+    input("Your python version does not work on this code, please install {sys.version[0]+sys.version[1]+sys.version[2]+sys.version[3]}")
     __import__("sys").exit()
 """
 author = f"""
