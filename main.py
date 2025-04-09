@@ -197,7 +197,7 @@ white = "\033[1;97m"
 a = f"{white}[{cyan}*{white}]" # [*]
 
 #Tool
-url = "https://raw.githubusercontent.com/HgAnh7/Tool/refs/heads/main/"
+url = "https://raw.githubusercontent.com/HgAnh7/Tool/main/"
 banner = requests.get(url+"banner.py").text
 QR_code = requests.get(url+"QR_code.py").text
 botnet_androi = requests.get(url+"botnet_androi.py").text
