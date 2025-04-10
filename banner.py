@@ -389,8 +389,8 @@ while random_color1 == random_color:
 os.system("cls" if os.name == "nt" else "clear")
 
 # Hiển thị banner với màu ngẫu nhiên
-print(random_color + random_banner + "\033[0m")  # Reset màu về mặc định
-print("\033[1;97m╔═══════════════════╗\033[0m")
-print("\033[1;97m║\033[0m " + random_color1 + info + "\033[0m" + " \033[1;97m║\033[0m")
-print("\033[1;97m╚═══════════════════╝\033[0m")
-print('\033[1;97m════════════════════════════════════════════════════════\033[0m')
+print(random_color + random_banner)  # Random color banners
+print("\033[1;97m╔═══════════════════╗")
+print("║ random_color1 + info + " \033[1;97m║")
+print("╚═══════════════════╝")
+print("═════════════════════════════════════════════════\033[0m")
