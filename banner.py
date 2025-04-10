@@ -391,6 +391,6 @@ os.system("cls" if os.name == "nt" else "clear")
 # Hiển thị banner với màu ngẫu nhiên
 print(random_color + random_banner)  # Random color banners
 print("\033[1;97m╔═══════════════════╗")
-print("║ random_color1 + info + " \033[1;97m║")
+print("║ " random_color1 + info + " \033[1;97m║")
 print("╚═══════════════════╝")
 print("═════════════════════════════════════════════════\033[0m")
